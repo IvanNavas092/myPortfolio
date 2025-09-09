@@ -1,0 +1,11 @@
+<section class="flex flex-col">
+  <div class="flex items-center group">
+    <h1 class="bebas text-7xl off-color">Projects</h1>
+    <hr class="border-1 border-[#828282] w-0 m-4 group-hover:w-full transition-all duration-200">
+  </div>
+  <div class="flex items-center">
+    @for (p of projects; track $index) {
+      <app-box-project [project]="p"></app-box-project>
+    }
+  </div>
+</section>

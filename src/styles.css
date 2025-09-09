@@ -14,7 +14,13 @@ body {
   font-style: normal;
 }
 
-.poppins {
-
+.off-color {
+  color: #828282;
 }
+.off-color:hover {
+  color: #aaaaaa;
+  transition: all 0.2s ease-in-out;
+}
+
+
 
