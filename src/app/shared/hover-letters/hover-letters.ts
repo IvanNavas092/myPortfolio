@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class HoverLetters {
   @Input() text: string = '';
+  @Input() size: string = '345px';
 
   getLetters() {
     return this.text.split('');
