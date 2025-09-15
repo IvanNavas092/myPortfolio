@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild, Inject, PLATFORM_ID, O
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isPlatformBrowser } from '@angular/common';
-import { HoverLetters } from '../../shared/hover-letters/hover-letters';
+import { HoverLetters } from '@/shared/hover-letters/hover-letters';
 
 gsap.registerPlugin(ScrollTrigger);
 

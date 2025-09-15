@@ -1,7 +1,7 @@
 <section class="flex flex-col">
-  <div class="flex items-center group">
+  <div class="flex items-center">
     <h1 class="bebas text-7xl off-color">Projects</h1>
-    <hr class="border-0.5 border-[#B66CFF] w-0 ml-2 group-hover:w-full transition-all duration-200">
+    <div class="w-0 h-1 bg-[var(--theme-color)] ml-2 rounded-xs" #lineP></div>
   </div>
   <div class="grid grid-cols-2 items-stretch gap-2 justify-between mt-2">
     @for (p of projects; track $index) {

@@ -1,7 +1,10 @@
 import { Project } from '@/interfaces/project';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { BoxProject } from './components/box-project/box-project';
-import { platform } from 'node:os';
+import { isPlatformBrowser } from '@angular/common';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Inject, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -10,7 +13,29 @@ import { platform } from 'node:os';
   templateUrl: './projects.html',
   styles: ``
 })
-export class Projects {
+export class Projects implements AfterViewInit, OnDestroy {
+  @ViewChild('lineP') lineP!: ElementRef<HTMLDivElement>;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+
+  ngAfterViewInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      gsap.to(this.lineP.nativeElement, {
+        width: '100%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: document.body,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 0.3
+        }
+      });
+    }
+  }
+  ngOnDestroy() {
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  }
+
 
   projects: Project[] = [
     {
@@ -23,20 +48,22 @@ export class Projects {
       title: 'FastSnippets',
       description: 'FastSnippets is a web platform to quickly and easily search, filter, and save code snippets.It supports frameworks like Angular, React, Vue, and Svelte, displaying code fragments with syntax highlighting and the option to save them as favorites.',
       image: './projects/fastSnippets.png',
-      utils: ['Angular', 'Firebase', 'TailwindCSS']
+      utils: ['Angular', 'Tailwind', 'Firebase']
     },
     {
       title: 'PomodoroCount',
       description: 'PomodoroCount is a website that implements the Pomodoro technique to help you stay focused while studying or working — with integrated music from your own Spotify account!',
       image: './projects/pomodoroCount.png',
-      utils: ['Angular', 'Firebase', 'TailwindCSS']
+      utils: ['Angular', 'Tailwind']
     },
     {
       title: 'TimeCapsule',
       description: '🚀 Time Capsule — Your story, sealed in time. It’s a web platform where users can create digital time capsules, schedule them to open in the future, and share them with others… or keep them secret until the exact day.',
       image: './projects/timeCapsule.png',
-      utils: ['React', 'Firebase', 'TailwindCSS']
+      utils: ['React', 'Tailwind', 'Java Spring', 'PostgreSQL']
     }
   ];
+
+
 
 }
