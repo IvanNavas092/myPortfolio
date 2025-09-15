@@ -61,8 +61,8 @@ export class BoxProject implements AfterViewInit, OnDestroy {
         ease: "power3.out",
         scrollTrigger: {
           trigger: this.projectBox.nativeElement,
-          start: "top 100%",   // empieza cuando el 80% de la pantalla toca el box
-          toggleActions: "play none none reverse"
+          start: "top 80%",
+          toggleActions: "play none none reverse",
         }
       });
     }

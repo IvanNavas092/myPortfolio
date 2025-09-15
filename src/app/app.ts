@@ -18,12 +18,12 @@ export class App {
   protected readonly title = signal('myPortfolio');
 
   constructor() {
-    if (typeof window !== 'undefined') { // solo en navegador
+    if (typeof window !== 'undefined') { 
       ScrollSmoother.create({
-        wrapper: '#wrapper', // contenedor principal
-        content: '#content', // contenido que va a scrollear
-        smooth: 0.3,         // cuánto suaviza el scroll
-        effects: true        // si quieres animaciones ligadas al scroll
+        wrapper: '#wrapper', 
+        content: '#content', 
+        smooth: 0.3,         
+        effects: true        
       });
     }
   }  

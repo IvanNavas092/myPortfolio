@@ -1,11 +1,6 @@
-<section class="flex flex-col">
-  <div class="flex items-center">
-    <h1 class="bebas text-7xl off-color">Projects</h1>
-    <div class="w-0 h-1 bg-[var(--theme-color)] ml-2 rounded-xs" #lineP></div>
-  </div>
-  <div class="grid grid-cols-2 items-stretch gap-2 justify-between mt-2">
-    @for (p of projects; track $index) {
-      <app-box-project [project]="p"></app-box-project>
-    }
-  </div>
-</section>
+<app-new-section nameSection="Projects"></app-new-section>
+<div class="grid grid-cols-2 items-stretch gap-2 justify-between mt-2">
+  @for (p of projects; track $index) {
+  <app-box-project [project]="p"></app-box-project>
+  }
+</div>

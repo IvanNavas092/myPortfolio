@@ -1,41 +1,17 @@
 import { Project } from '@/interfaces/project';
-import { Component, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { BoxProject } from './components/box-project/box-project';
-import { isPlatformBrowser } from '@angular/common';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Inject, PLATFORM_ID } from '@angular/core';
+
+import { NewSection } from '../new-section/new-section';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [BoxProject],
+  imports: [BoxProject, NewSection],
   templateUrl: './projects.html',
   styles: ``
 })
-export class Projects implements AfterViewInit, OnDestroy {
-  @ViewChild('lineP') lineP!: ElementRef<HTMLDivElement>;
-
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
-
-  ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      gsap.to(this.lineP.nativeElement, {
-        width: '100%',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: document.body,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 0.3
-        }
-      });
-    }
-  }
-  ngOnDestroy() {
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  }
-
+export class Projects {
 
   projects: Project[] = [
     {
@@ -63,7 +39,4 @@ export class Projects implements AfterViewInit, OnDestroy {
       utils: ['React', 'Tailwind', 'Java Spring', 'PostgreSQL']
     }
   ];
-
-
-
 }
