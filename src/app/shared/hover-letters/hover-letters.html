@@ -1,4 +1,6 @@
-<h1 class="text-[345px] font-bold leading-[0.9] tracking-[-0.05em] flex gap-[0.02em]">
+<h1 class="font-bold leading-[0.9] tracking-[-0.07em] flex gap-[0.02em]"
+  [style.fontSize]="size"
+>
   @for (letter of getLetters(); track $index) {
     <span class="off-color transition-colors duration-200 bebas cursor-default">
       {{ letter }}

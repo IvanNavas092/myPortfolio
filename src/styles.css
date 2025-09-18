@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 
+:root {
+  --theme-color: #b66cff;
+  --secondary-color: #7a3bff;
+}
+
+
 body {
   background-color: #111111;
   color: #ffffff;
@@ -15,12 +21,31 @@ body {
 }
 
 .off-color {
-  color: #828282;
+  color: #d1d1d1;
 }
+
 .off-color:hover {
   color: #aaaaaa;
   transition: all 0.2s ease-in-out;
 }
 
 
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--theme-color), var(--secondary-color));
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--secondary-color), var(--theme-color));
+}
