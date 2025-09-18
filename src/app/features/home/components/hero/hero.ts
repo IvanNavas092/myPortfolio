@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  ViewChild,
+  Inject,
+  PLATFORM_ID,
+  OnDestroy,
+} from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isPlatformBrowser } from '@angular/common';
@@ -25,8 +33,8 @@ export class Hero implements AfterViewInit, OnDestroy {
           trigger: document.body,
           start: 'top top',
           end: 'bottom bottom',
-          scrub: 0.3
-        }
+          scrub: 0.3,
+        },
       });
     }
   }
