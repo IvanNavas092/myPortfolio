@@ -27,7 +27,7 @@ export class Projects {
       utils: ['Angular', 'Tailwind', 'Firebase']
     },
     {
-      title: 'PomodoroCount',
+      title: 'Pomodoro Count',
       description: 'PomodoroCount is a website that implements the Pomodoro technique to help you stay focused while studying or working — with integrated music from your own Spotify account!',
       image: './projects/pomodoroCount.png',
       utils: ['Angular', 'Tailwind']
