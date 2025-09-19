@@ -1,10 +1,9 @@
 <app-new-section nameSection="about Me"></app-new-section>
-<section class="mt-2 grid grid-cols-1 md:grid-cols-12 gap-2" id="contact">
+<section class="relative mt-2 grid grid-cols-1 md:grid-cols-12 gap-2" id="contact">
   <!-- left side about me + contact -->
   <div class="flex flex-col gap-2 col-span-5">
     <!-- about me -->
-    <div class="p-4 border-1 border-[#828282]/40 rounded-2xl w-full">
-      <h2 class="bebas text-4xl off-color">ABOUT ME</h2>
+    <app-section-card title="ABOUT ME">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -12,46 +11,52 @@
         voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
         cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
-    </div>
+    </app-section-card>
     <!-- contact -->
     <app-new-section nameSection="contact"></app-new-section>
-    <div class="grid grid-cols-2 p-4 border-1 border-[#828282]/40 rounded-2xl w-full">
-      <div class="flex flex-col">
-        @for (item of itemsInput; track $index) {
-        <label for="name" class="text-md font-semibold">
-          {{ item.label }}
-        </label>
-        <input
-          class="border text-sm border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400"
-          type="item.type"
-          [placeholder]="item.placeholder"
-        />
-        }
+    <app-section-card>
+      <div class="grid grid-cols-2">
+        <div class="flex flex-col">
+          @for (item of itemsInput; track $index) {
+          <label for="name" class="text-md font-semibold">
+            {{ item.label }}
+          </label>
+          <input
+            class="border text-sm border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400"
+            type="item.type"
+            [placeholder]="item.placeholder"
+          />
+          }
+        </div>
+        <!-- socials icons -->
+        <div class="flex flex-col gap-2 justify-center items-center">
+          @for (item of socials; track $index) {
+          <div class="flex flex-col gap-1 items-center">
+            <img
+              [src]="item.src"
+              [alt]="item.alt"
+              class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+            {{ item.name }}
+          </div>
+          }
+        </div>
       </div>
-      <!-- socials icons -->
-      <div class="flex flex-col gap-2 justify-center items-center">
-        @for (item of socials; track $index) {
-        <img [src]="item.src" [alt]="item.alt" class="w-8 h-8" />
-        {{ item.name }}
-        }
-      </div>
-    </div>
+    </app-section-card>
   </div>
   <!-- right side current focus + experience -->
   <div class="col-span-7 space-y-2">
     <div class="flex gap-2 items-start">
       <!-- skills -->
-      <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
-        <h2 class="bebas text-4xl off-color">SKILLS</h2>
+      <app-section-card title="SKILLS">
         <div class="flex flex-wrap gap-1">
           @for (util of skills; track $index) {
           <app-icon-skill [util]="util"></app-icon-skill>
           }
         </div>
-      </div>
+      </app-section-card>
       <!-- Testimonials  -->
-      <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
-        <h2 class="bebas text-4xl off-color">Testimonials</h2>
+      <app-section-card title="Testimonials">
         <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
           <p class="italic">
             "Como mentor de Iván durante sus prácticas en Better consultants puedo asegurar que es
@@ -59,25 +64,30 @@
             potencial a la hora de resolver las distintas tareas que se le fueron asignando."
           </p>
         </div>
-      </div>
+      </app-section-card>
     </div>
-    <div class="p-4 border-1 border-[#828282]/40 rounded-2xl space-y-2">
-      <h2 class="bebas text-4xl off-color">CURRENT FOCUS</h2>
-      <p>
-        I currently work as an Angular developer in the banking sector, building modern and
-        efficient interfaces within a microservices architecture, aligned with the quality and
-        security standards of the financial environment.
-      </p>
-      <div>
-        <img src="./bankinter.svg" alt="" class="w-1/2 bg-gray-800 p-2" />
+    <!-- Current focus -->
+    <app-section-card title="CURRENT FOCUS">
+      <div class="flex gap-2 ">
+        <app-box-project [project]="project"></app-box-project>
+        <p>
+          I currently work as an Angular developer in the banking sector, building modern and
+          efficient interfaces within a microservices architecture, aligned with the quality and
+          security standards of the financial environment.
+        </p>
       </div>
       <div class="mt-12">
         <h2 class="bebas text-4xl off-color">EXPERIENCE</h2>
-        <p>
-          ● Front End developer in Better Consultants
-          <span class="text-gray-200 text-sm">03/2025 - Actual</span>
-        </p>
+        <div class="flex items-center gap-1">
+          <p>● Angular developer in Better Consultants</p>
+          <hr class="w-12 m-2" />
+          <span class="text-[#828282] text-sm">03/2025 - Actual</span>
+        </div>
       </div>
-    </div>
+    </app-section-card>
+  </div>
+  <div class="absolute top-56 left-8/12 flex items-center gap-2">
+    <img src="./arrow.svg" alt="arrow" class="w-12 h-12 scale-x-[-1]" />
+    <span class="text-[#828282] text-md">thaks you! :)</span>
   </div>
 </section>
