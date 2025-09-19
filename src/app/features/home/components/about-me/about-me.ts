@@ -4,13 +4,17 @@ import { IconSkill } from "@/shared/icon-skill/icon-skill";
 import { SectionCard } from "./components/section-card/section-card";
 import { BoxProject } from "../projects/components/box-project/box-project";
 import { Project } from '@/interfaces/project';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about-me',
-  imports: [NewSection, IconSkill, SectionCard, BoxProject],
+  imports: [NewSection, IconSkill, SectionCard, BoxProject, TranslatePipe],
   templateUrl: './about-me.html',
 })
 export class AboutMe {
+
+  constructor(private translateService: TranslateService) { }
 
   project: Project =
     {

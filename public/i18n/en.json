@@ -1,0 +1,16 @@
+{
+  "about-me": "About Me",
+  "contact": "Contact",
+  "skills": "Skills",
+  "testimonials": "Testimonials",
+  "current-focus": "Current Focus",
+  "experience": "Experience",
+  "projects": "Projects",
+  "desc-skillping": "SkillPing is a unique platform with chat included, where people connect to exchange knowledge. You teach what you know and learn what you want — without any money involved. A space to grow together, learn in community, and connect with others who share your passion for learning.",
+  "desc-fastsnippets": "FastSnippets is a tool that allows you to quickly and easily create and share code snippets. With just a few clicks, you can create code snippets and share them with other users.",
+  "desc-pomodoro": "PomodoroCount is a website that implements the Pomodoro technique to help you stay focused while studying or working — with music integrated from your own Spotify account!",
+  "desc-timecapsule": "🚀 Time Capsule — Your story, sealed in time. It's a web platform where users can create digital time capsules, schedule them to open in the future, and share them with others… or keep them secret until the exact day.",
+  "testimonial": "As Iván's mentor during his internship at Better Consultants, I can assure he is a professional eager to learn and improve day by day, demonstrating great potential in solving the tasks assigned to him.",
+  "job-desc": "I currently work as an Angular developer in the banking sector, building modern and efficient interfaces within a microservices architecture, aligned with the quality and security standards of the financial environment.",
+  "job-title": "Angular Developer at Better Consultants"
+}
