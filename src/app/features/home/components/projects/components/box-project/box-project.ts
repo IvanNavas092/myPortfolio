@@ -1,22 +1,23 @@
 import { Component, ElementRef, Input, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { Project } from '@/interfaces/project';
 import { CommonModule } from '@angular/common';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { IconSkill } from "@/shared/icon-skill/icon-skill";
 
+import { TranslatePipe } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-box-project',
-  imports: [CommonModule, IconSkill],
+  imports: [CommonModule, IconSkill, TranslatePipe],
   templateUrl: './box-project.html',
 })
 export class BoxProject implements AfterViewInit, OnDestroy {
   @Input() project!: Project;
 
-  constructor(private sanitizer: DomSanitizer, @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   @ViewChild('projectBox', { static: true }) projectBox!: ElementRef;
 

@@ -18,11 +18,7 @@ export class App {
   protected readonly title = signal('myPortfolio');
 
   constructor(private translateService: TranslateService) {
-    this.translateService.setDefaultLang('es');
-  }
-
-  switchLang(lang: string){
-    this.translateService.use(lang);
+    this.translateService.use('en');
   }
 
 }

@@ -27,6 +27,7 @@
             [placeholder]="item.placeholder"
           />
           }
+          <button class="border border-[#828282] text-white p-2 rounded-lg mt-2 mb-2 cursor-pointer bg-[var(--theme-color)] font-semibold hover:scale-101 transition-all duration-100">{{'send' | translate}}</button>
         </div>
         <!-- socials icons -->
         <div class="flex flex-col gap-2 justify-center items-center">
@@ -59,7 +60,7 @@
       <app-section-card title="Testimonials">
         <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
           <p class="italic">
-            "As Iván's mentor during his internship at Better Consultants, I can assure that he is a skilled professional with a strong desire to learn and improve every day, demonstrating great potential in completing the various tasks assigned to him."
+            {{ 'job-desc' | translate }}
           </p>
         </div>
       </app-section-card>
