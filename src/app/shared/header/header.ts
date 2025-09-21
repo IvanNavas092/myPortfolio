@@ -1,14 +1,20 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { ButtonLang } from "../button-lang/button-lang";
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [TranslatePipe, ButtonLang],
   templateUrl: './header.html',
-  styles: ``,
 })
 export class Header {
+  changeLang: boolean = true;
+
+  constructor(private translateService: TranslateService) {}
 
   goToAboutMe() {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   }
+
+  
 }

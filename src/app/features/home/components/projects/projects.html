@@ -1,4 +1,4 @@
-<app-new-section nameSection="Projects"></app-new-section>
+<app-new-section nameSection="{{ 'projects' | translate }}"></app-new-section>
 <div class="grid grid-cols-2 items-stretch gap-2 justify-between mt-2">
   @for (p of projects; track $index) {
   <app-box-project [project]="p"></app-box-project>

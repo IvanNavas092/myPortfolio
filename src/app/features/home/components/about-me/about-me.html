@@ -27,6 +27,7 @@
             [placeholder]="item.placeholder"
           />
           }
+          <button class="border border-[#828282] text-white p-2 rounded-lg mt-2 mb-2 cursor-pointer bg-[var(--theme-color)] font-semibold hover:scale-101 transition-all duration-100">{{'send' | translate}}</button>
         </div>
         <!-- socials icons -->
         <div class="flex flex-col gap-2 justify-center items-center">
@@ -59,9 +60,7 @@
       <app-section-card title="Testimonials">
         <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
           <p class="italic">
-            "Como mentor de Iván durante sus prácticas en Better consultants puedo asegurar que es
-            un buen profesional con afán por aprender y mejorar día a día. Demostrando tener un gran
-            potencial a la hora de resolver las distintas tareas que se le fueron asignando."
+            {{ 'job-desc' | translate }}
           </p>
         </div>
       </app-section-card>
@@ -71,15 +70,13 @@
       <div class="flex gap-2 ">
         <app-box-project [project]="project"></app-box-project>
         <p>
-          I currently work as an Angular developer in the banking sector, building modern and
-          efficient interfaces within a microservices architecture, aligned with the quality and
-          security standards of the financial environment.
+          {{ 'job-desc' | translate }}
         </p>
       </div>
       <div class="mt-12">
         <h2 class="bebas text-4xl off-color">EXPERIENCE</h2>
         <div class="flex items-center gap-1">
-          <p>● Angular developer in Better Consultants</p>
+          <p>{{ 'job-title' | translate }}</p>
           <hr class="w-12 m-2" />
           <span class="text-[#828282] text-sm">03/2025 - Actual</span>
         </div>
