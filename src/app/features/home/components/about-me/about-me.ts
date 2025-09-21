@@ -32,8 +32,10 @@ export class AboutMe {
   socials: any[] = [
     { src: './socialsIcons/linkedin.svg', alt: 'Linkedin', name: 'Linkedin', href: 'https://www.linkedin.com/in/navass/' },
     { src: './socialsIcons/github.svg', alt: 'Github', name: 'Github', href: 'https://github.com/IvanNavas092/' },
-    { src: './socialsIcons/discord.svg', alt: 'Discord', name: 'Discord', href: 'https://discord.com' },
+    { src: './socialsIcons/gmail.svg', alt: 'Gmail', name: 'Gmail', href: 'mailto:navass21112@gmail.com' },
   ]
+
+
 
 
 }
