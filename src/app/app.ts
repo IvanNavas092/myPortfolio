@@ -16,15 +16,5 @@ gsap.registerPlugin(ScrollSmoother);
 })
 export class App {
   protected readonly title = signal('myPortfolio');
-
-  constructor() {
-    if (typeof window !== 'undefined') { 
-      ScrollSmoother.create({
-        wrapper: '#wrapper', 
-        content: '#content', 
-        smooth: 0.3,         
-        effects: true        
-      });
-    }
-  }  
+ 
 }
