@@ -1,13 +1,9 @@
 import { Component, ElementRef, Input, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { Project } from '@/interfaces/project';
 import { CommonModule } from '@angular/common';
-import { Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { IconSkill } from "@/shared/icon-skill/icon-skill";
-
 import { TranslatePipe } from '@ngx-translate/core';
+import { AnimationService } from '@/core/services/animationService';
 
 @Component({
   selector: 'app-box-project',
@@ -17,28 +13,15 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class BoxProject implements AfterViewInit, OnDestroy {
   @Input() project!: Project;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(private animationService: AnimationService) { }
 
   @ViewChild('projectBox', { static: true }) projectBox!: ElementRef;
 
   ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      gsap.from(this.projectBox.nativeElement, {
-        opacity: 0,
-        scale: 0.9,
-        y: 50,
-        duration: 0.1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: this.projectBox.nativeElement,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
-        },
-      });
-    }
+    this.animationService.animateCard(this.projectBox.nativeElement, 0.1);
   }
 
   ngOnDestroy() {
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    this.animationService.killAllScrollTriggers();
   }
 }

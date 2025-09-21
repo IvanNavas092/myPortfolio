@@ -1,18 +1,6 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  ViewChild,
-  Inject,
-  PLATFORM_ID,
-  OnDestroy,
-} from '@angular/core';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { HoverLetters } from '@/shared/hover-letters/hover-letters';
-
-gsap.registerPlugin(ScrollTrigger);
+import { AnimationService } from '@/core/services/animationService';
 
 @Component({
   selector: 'app-hero',
@@ -22,23 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 export class Hero implements AfterViewInit, OnDestroy {
   @ViewChild('line') line!: ElementRef<HTMLDivElement>;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(private animationService: AnimationService) {}
 
   ngAfterViewInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      gsap.to(this.line.nativeElement, {
-        width: '100%',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: document.body,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 0.3,
-        },
-      });
-    }
+    this.animationService.animateLineOnScroll(this.line.nativeElement);
   }
   ngOnDestroy() {
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  }
+    this.animationService.killAllScrollTriggers();
+    }
 }

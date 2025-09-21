@@ -20,6 +20,13 @@ body {
   font-style: normal;
 }
 
+.font-write {
+  font-family: "Edu TAS Beginner", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
 .off-color {
   color: #d1d1d1;
 }
