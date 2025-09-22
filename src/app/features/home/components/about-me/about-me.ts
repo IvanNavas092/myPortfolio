@@ -18,7 +18,7 @@ export class AboutMe {
 
   project: Project =
     {
-      image: './projects/bankinter.png',
+      image: './projects/bankinter.jpg',
       utils: ['Angular', 'Bootstrap', 'java spring', 'git', 'jenkins']
     }
 

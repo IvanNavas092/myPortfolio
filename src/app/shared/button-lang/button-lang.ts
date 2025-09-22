@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ButtonLang {
   changeLang: boolean = true;
-
+  
   constructor(private translateService: TranslateService) { }
 
   switchLang() {
