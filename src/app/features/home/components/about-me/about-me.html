@@ -4,7 +4,7 @@
   <div class="flex flex-col gap-2 col-span-5">
     <!-- about me -->
     <app-section-card title="ABOUT ME">
-      <p>
+      <p class="text-sm md:text-base">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
@@ -22,7 +22,7 @@
             {{ item.label }}
           </label>
           <input
-            class="border text-sm border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400"
+            class="border text-sm md:text-base border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400"
             type="item.type"
             [placeholder]="item.placeholder"
           />
@@ -36,14 +36,14 @@
         <!-- socials icons -->
         <div class="flex flex-col gap-2 justify-center items-center">
           @for (item of socials; track $index) {
-            <a href="{{ item.href }}" class="flex flex-col items-center gap-1">
+          <a href="{{ item.href }}" class="flex flex-col items-center gap-1">
             <img
               [src]="item.src"
               [alt]="item.alt"
               class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer"
             />
             {{ item.name }}
-            </a>
+          </a>
           }
         </div>
       </div>
@@ -63,28 +63,28 @@
       <!-- Testimonials  -->
       <app-section-card title="Testimonials">
         <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
-          <p class="italic">
-            {{ 'job-desc' | translate }}
+          <p class="italic text-sm md:text-base">
+            "{{ 'job-desc' | translate }}"
           </p>
         </div>
       </app-section-card>
     </div>
     <!-- Current focus -->
     <app-section-card title="CURRENT FOCUS">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
         <!-- Caja del proyecto -->
         <app-box-project [project]="project"></app-box-project>
 
-        <!-- Descripción del trabajo -->
+        <!-- description -->
         <div class="space-y-2">
           <div class="flex flex-col">
-            <h1 class="bebas text-2xl font-bold">
+            <h1 class="bebas text-xl font-bold md:text-3xl ">
               {{ 'job-title' | translate }}
             </h1>
-            <span class="text-[#828282] text-sm mb-2">MARCH 2025 - PRESENT</span>
+            <span class="text-[#828282] text-sm  mb-2">MARCH 2025 - PRESENT</span>
           </div>
           <div>
-            <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm">
+            <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm md:text-base">
               <li>Desarrollo de aplicaciones web con Angular en el sector bancario</li>
               <li>Creación de interfaces modernas y eficientes para usuarios</li>
               <li>
@@ -101,13 +101,9 @@
         <div class="flex items-center gap-1">
           <p>{{ 'job-title' | translate }}</p>
           <hr class="w-12 m-2" />
-          <span class="text-[#828282] text-sm">03/2025 - Actual</span>
+          <span class="text-[#828282] text-sm md:text-base">03/2025 - Actual</span>
         </div>
       </div>
     </app-section-card>
-  </div>
-  <div class="absolute top-55 left-8/12 flex items-center gap-4">
-    <img src="./arrow.svg" alt="arrow" class="w-16 h-16 scale-x-[-1]" />
-    <span class="text-[#828282] text-lg font-write">thaks you! :)</span>
   </div>
 </section>

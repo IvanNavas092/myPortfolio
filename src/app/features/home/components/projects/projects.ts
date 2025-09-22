@@ -15,25 +15,25 @@ export class Projects {
     {
       title: 'SkillPing',
       description: 'desc-skillping',
-      image: './projects/skillPing.png',
+      image: './projects/skillPing.jpg',
       utils: ['Angular', 'Django', 'Tailwind', 'PostgreSQL', 'JWT']
     },
     {
       title: 'FastSnippets',
       description: 'desc-fastsnippets',
-      image: './projects/fastSnippets.png',
+      image: './projects/fastSnippets.jpg',
       utils: ['Angular', 'Tailwind', 'Firebase']
     },
     {
       title: 'Pomodoro Count',
       description: 'desc-pomodoro',
-      image: './projects/pomodoroCount.png',
+      image: './projects/pomodoroCount.jpg',
       utils: ['Angular', 'Tailwind']
     },
     {
       title: 'TimeCapsule',
       description: 'desc-timecapsule',
-      image: './projects/timeCapsule.png',
+      image: './projects/timeCapsule.jpg',
       utils: ['React', 'Tailwind', 'Java Spring', 'PostgreSQL']
     }
   ];

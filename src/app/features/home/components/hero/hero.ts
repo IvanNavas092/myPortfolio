@@ -7,6 +7,7 @@ import {
   PLATFORM_ID,
   HostListener,
   Inject,
+  OnInit,
 } from '@angular/core';
 import { HoverLetters } from '@/shared/hover-letters/hover-letters';
 import { AnimationService } from '@/core/services/animationService';
@@ -17,7 +18,7 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './hero.html',
   imports: [HoverLetters],
 })
-export class Hero implements AfterViewInit, OnDestroy {
+export class Hero implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('line') line!: ElementRef<HTMLDivElement>;
 
   titleSize: string = '';
@@ -27,6 +28,10 @@ export class Hero implements AfterViewInit, OnDestroy {
     private animationService: AnimationService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
+
+  ngOnInit(): void {
+    this.onResize();
+  }
 
   @HostListener('window:resize')
   onResize() {
@@ -47,15 +52,16 @@ export class Hero implements AfterViewInit, OnDestroy {
 
     if (windowWidth < 640) {
       // mobile
-      return '150px';
+      return '200px';
     } else if (windowWidth < 1024) {
       // tablets
-      return '450px';
+      return '320px';
     } else if (windowWidth < 1280) {
       // laptop
-      return '500px';
+      return '390px';
+    } else if (windowWidth < 1536) {
+      return '450px';
     } else {
-      // desktop
       return '500px';
     }
   }
@@ -65,12 +71,16 @@ export class Hero implements AfterViewInit, OnDestroy {
 
     if (windowWidth < 640) {
       // mobile
-      return '100px';
+      return '120px';
     } else if (windowWidth < 1024) {
       // tablets
+      return '250px';
+    } else if (windowWidth < 1280) {
+      // laptop
+      return '290px';
+    } else if (windowWidth < 1536) {
       return '350px';
     } else {
-      // desktop
       return '400px';
     }
   }
