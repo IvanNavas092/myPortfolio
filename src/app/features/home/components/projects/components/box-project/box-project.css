@@ -1,0 +1,150 @@
+/* Estilos base para el overlay */
+.overlay-content {
+  padding: 0.5rem;
+}
+
+.overlay-title {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.overlay-description {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding: 0 0.25rem;
+}
+
+.overlay-tech-container {
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.overlay-tech-badge {
+  gap: 0.25rem;
+  border-radius: 0.5rem;
+  padding: 0.125rem 0.25rem;
+  font-size: 0.625rem;
+}
+
+.overlay-tech-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* Estilos para contenedor pequeño */
+.small-container .overlay-content {
+  padding: 0.25rem;
+}
+
+.small-container .overlay-title {
+  font-size: 0.875rem;
+  margin-bottom: 0.125rem;
+}
+
+.small-container .overlay-description {
+  font-size: 0.625rem;
+  margin-bottom: 0.25rem;
+  padding: 0 0.125rem;
+}
+
+.small-container .overlay-tech-container {
+  gap: 0.125rem;
+  margin-top: 0.25rem;
+}
+
+.small-container .overlay-tech-badge {
+  gap: 0.125rem;
+  border-radius: 0.375rem;
+  padding: 0.0625rem 0.125rem;
+  font-size: 0.5rem;
+}
+
+.small-container .overlay-tech-icon {
+  width: 0.625rem;
+  height: 0.625rem;
+}
+
+/* Estilos para contenedor mediano */
+.medium-container .overlay-content {
+  padding: 0.75rem;
+}
+
+.medium-container .overlay-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.375rem;
+}
+
+.medium-container .overlay-description {
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  padding: 0 0.375rem;
+}
+
+.medium-container .overlay-tech-container {
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+}
+
+.medium-container .overlay-tech-badge {
+  gap: 0.375rem;
+  border-radius: 0.625rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.medium-container .overlay-tech-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Estilos para contenedor grande */
+.large-container .overlay-content {
+  padding: 2rem;
+}
+
+.large-container .overlay-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.large-container .overlay-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+}
+
+.large-container .overlay-tech-container {
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.large-container .overlay-tech-badge {
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.large-container .overlay-tech-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Ajustes adicionales para contenedores muy grandes */
+@media (min-width: 500px) {
+  .large-container .overlay-content {
+    padding: 3rem;
+  }
+  
+  .large-container .overlay-title {
+    font-size: 2.5rem;
+  }
+  
+  .large-container .overlay-description {
+    font-size: 1.125rem;
+  }
+  
+  .large-container .overlay-tech-badge {
+    font-size: 1rem;
+  }
+}

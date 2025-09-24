@@ -1,0 +1,12 @@
+<section class="flex flex-col min-h-[calc(100vh-120px)] overflow-hidden -ml-3">
+  <div class="flex flex-col space-y-4 md:space-y-10 lg:space-y-12 xl:space-y-16 ">
+    <div class="flex flex-col md:flex-row items-start  md:items-center z-20">
+      <app-hover-letters [text]="'Front'" [size]="titleSize"></app-hover-letters>
+      <div class="h-0  md:h-10  bg-[#d1d1d1] hover:bg-[#aaaaaa]  md:m-6 lg:m-8 xl:m-10 2xl:m-12 items-center" #line></div>
+      <app-hover-letters [text]="'End'" [size]="titleSize"></app-hover-letters>
+    </div>
+    <div class="z-20">
+      <app-hover-letters [text]="'developer'" [size]="subtitleSize"></app-hover-letters>
+    </div>
+  </div>
+</section>

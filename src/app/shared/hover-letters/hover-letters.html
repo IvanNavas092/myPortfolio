@@ -1,9 +1,11 @@
-<h1 class="font-bold leading-[0.9] tracking-[-0.05em] flex gap-[0.02em]"
-  [style.fontSize]="size"
+<h1
+  class="font-bold leading-[0.9] tracking-[-0.07em] flex gap-[0.02em]"
+  [ngClass]="heroClasses"
+  [style.font-size]="fontSize"
 >
   @for (letter of getLetters(); track $index) {
-    <span class="off-color transition-colors duration-200 bebas cursor-default">
-      {{ letter }}
-    </span>
+  <span class="off-color transition-colors duration-200 bebas cursor-default">
+    {{ letter }}
+  </span>
   }
 </h1>
