@@ -4,9 +4,9 @@
   <div class="flex flex-col gap-2 col-span-5">
     <!-- about me -->
     <app-section-card title="ABOUT ME">
-      <p class="text-sm md:text-base">
+      <p class="text-sm md:text-base font-light">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quisstrud exercitation ullamco
         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
         voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
         cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -18,11 +18,11 @@
       <div class="grid grid-cols-2">
         <div class="flex flex-col">
           @for (item of itemsInput; track $index) {
-          <label for="name" class="text-md font-semibold">
+          <label for="name" class="text-base font-semibold">
             {{ item.label }}
           </label>
           <input
-            class="border text-sm md:text-base border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400"
+            class="border text-sm md:text-base border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400 font-light"
             type="item.type"
             [placeholder]="item.placeholder"
           />
@@ -63,7 +63,7 @@
       <!-- Testimonials  -->
       <app-section-card title="Testimonials">
         <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
-          <p class="italic text-sm md:text-base">
+          <p class="italic text-sm md:text-base font-light">
             "{{ 'job-desc' | translate }}"
           </p>
         </div>
@@ -81,10 +81,10 @@
             <h1 class="bebas text-xl font-bold md:text-3xl ">
               {{ 'job-title' | translate }}
             </h1>
-            <span class="text-[#828282] text-sm  mb-2">MARCH 2025 - PRESENT</span>
+            <span class="text-[#828282] text-sm mb-1 font-light">MARCH 2025 - PRESENT</span>
           </div>
           <div>
-            <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm md:text-base">
+            <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm md:text-base font-light">
               <li>Desarrollo de aplicaciones web con Angular en el sector bancario</li>
               <li>Creación de interfaces modernas y eficientes para usuarios</li>
               <li>
@@ -98,7 +98,7 @@
 
       <div class="mt-12">
         <h2 class="bebas text-4xl off-color">EXPERIENCE</h2>
-        <div class="flex items-center gap-1">
+        <div class="flex items-center gap-1 font-light">
           <p>{{ 'job-title' | translate }}</p>
           <hr class="w-12 m-2" />
           <span class="text-[#828282] text-sm md:text-base">03/2025 - Actual</span>

@@ -16,7 +16,7 @@ export class Projects {
       title: 'SkillPing',
       description: 'desc-skillping',
       image: './projects/skillPing.jpg',
-      utils: ['Angular', 'Django', 'Tailwind', 'PostgreSQL', 'JWT']
+      utils: ['Angular', 'Django', 'Tailwind', 'PostgreSQL']
     },
     {
       title: 'FastSnippets',
