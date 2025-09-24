@@ -1,0 +1,109 @@
+<app-new-section nameSection="about Me"></app-new-section>
+<section class="relative mt-2 grid grid-cols-1 md:grid-cols-12 gap-2" id="contact">
+  <!-- left side about me + contact -->
+  <div class="flex flex-col gap-2 col-span-5">
+    <!-- about me -->
+    <app-section-card title="ABOUT ME">
+      <p class="text-sm md:text-base font-light">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quisstrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </app-section-card>
+    <!-- contact -->
+    <app-new-section nameSection="contact"></app-new-section>
+    <app-section-card>
+      <div class="grid grid-cols-2">
+        <div class="flex flex-col">
+          @for (item of itemsInput; track $index) {
+          <label for="name" class="text-base font-semibold">
+            {{ item.label }}
+          </label>
+          <input
+            class="border text-sm md:text-base border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400 font-light"
+            type="item.type"
+            [placeholder]="item.placeholder"
+          />
+          }
+          <button
+            class="border border-[#828282] text-white p-2 rounded-lg mt-2 mb-2 cursor-pointer bg-[var(--theme-color)] font-semibold hover:scale-101 transition-all duration-100"
+          >
+            {{ 'send' | translate }}
+          </button>
+        </div>
+        <!-- socials icons -->
+        <div class="flex flex-col gap-2 justify-center items-center">
+          @for (item of socials; track $index) {
+          <a href="{{ item.href }}" class="flex flex-col items-center gap-1">
+            <img
+              [src]="item.src"
+              [alt]="item.alt"
+              class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer"
+            />
+            {{ item.name }}
+          </a>
+          }
+        </div>
+      </div>
+    </app-section-card>
+  </div>
+  <!-- right side current focus + experience -->
+  <div class="col-span-7 space-y-2">
+    <div class="flex gap-2 items-start">
+      <!-- skills -->
+      <app-section-card title="SKILLS">
+        <div class="flex flex-wrap gap-1">
+          @for (util of skills; track $index) {
+          <app-icon-skill [util]="util"></app-icon-skill>
+          }
+        </div>
+      </app-section-card>
+      <!-- Testimonials  -->
+      <app-section-card title="Testimonials">
+        <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
+          <p class="italic text-sm md:text-base font-light">
+            "{{ 'job-desc' | translate }}"
+          </p>
+        </div>
+      </app-section-card>
+    </div>
+    <!-- Current focus -->
+    <app-section-card title="CURRENT FOCUS">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+        <!-- Caja del proyecto -->
+        <app-box-project [project]="project"></app-box-project>
+
+        <!-- description -->
+        <div class="space-y-2">
+          <div class="flex flex-col">
+            <h1 class="bebas text-xl font-bold md:text-3xl ">
+              {{ 'job-title' | translate }}
+            </h1>
+            <span class="text-[#828282] text-sm mb-1 font-light">MARCH 2025 - PRESENT</span>
+          </div>
+          <div>
+            <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm md:text-base font-light">
+              <li>Desarrollo de aplicaciones web con Angular en el sector bancario</li>
+              <li>Creación de interfaces modernas y eficientes para usuarios</li>
+              <li>
+                Implementación en arquitecturas de microservicios bajo estándares de calidad y
+                seguridad
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="bebas text-4xl off-color">EXPERIENCE</h2>
+        <div class="flex items-center gap-1 font-light">
+          <p>{{ 'job-title' | translate }}</p>
+          <hr class="w-12 m-2" />
+          <span class="text-[#828282] text-sm md:text-base">03/2025 - Actual</span>
+        </div>
+      </div>
+    </app-section-card>
+  </div>
+</section>

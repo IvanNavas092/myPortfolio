@@ -1,0 +1,8 @@
+<div
+  class="flex items-center gap-1 sm:gap-2 border border-[#B66CFF]/60 rounded-lg sm:rounded-xl
+    px-1 sm:px-2 md:px-3 py-0.5 sm:py-1 md:text-sm text-gray-200 hover:bg-white hover:text-black
+    transition-colors duration-300 shadow-lg"
+>
+  <p class="text-sm md:text-base text-shadow-lg">{{ util }}</p>
+  <div [innerHTML]="detectUtils(util)" class="flex-shrink-0"></div>
+</div>
