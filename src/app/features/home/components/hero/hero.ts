@@ -49,16 +49,22 @@ export class Hero implements OnInit, AfterViewInit, OnDestroy {
 
   responsiveTitle(): string {
     const windowWidth = window.innerWidth;
-
     if (windowWidth < 640) {
-      // mobile
+      // mobile M
+      return '180px';
+    } else if (windowWidth < 640) {
+      // mobile L
       return '200px';
     } else if (windowWidth < 1024) {
       // tablets
-      return '320px';
+      return '300px';
+    } else if (windowWidth < 1095) {
+      return '340px';
     } else if (windowWidth < 1280) {
       // laptop
-      return '390px';
+      return '360px';
+    } else if (windowWidth < 1366) {
+      return '420px';
     } else if (windowWidth < 1536) {
       return '450px';
     } else {
@@ -68,16 +74,18 @@ export class Hero implements OnInit, AfterViewInit, OnDestroy {
 
   responsiveSubtitle(): string {
     const windowWidth = window.innerWidth;
-
     if (windowWidth < 640) {
-      // mobile
+      // mobile M
+      return '100px';
+    } else if (windowWidth < 640) {
+      // mobile L
       return '120px';
     } else if (windowWidth < 1024) {
       // tablets
-      return '250px';
+      return '190px';
     } else if (windowWidth < 1280) {
       // laptop
-      return '290px';
+      return '250px';
     } else if (windowWidth < 1536) {
       return '350px';
     } else {

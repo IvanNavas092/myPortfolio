@@ -5,30 +5,47 @@
     <!-- about me -->
     <app-section-card title="ABOUT ME">
       <p class="text-sm md:text-base font-light">
-       {{ 'about-me-text' | translate }}
+        {{ 'about-me-text' | translate }}
       </p>
     </app-section-card>
     <!-- contact -->
     <app-new-section nameSection="contact"></app-new-section>
     <app-section-card>
       <div class="grid grid-cols-2">
-        <div class="flex flex-col">
+        <!-- form -->
+        <form (ngSubmit)="submitForm($event)" [formGroup]="formData" class="flex flex-col">
           @for (item of itemsInput; track $index) {
           <label for="name" class="text-base font-semibold">
             {{ item.label }}
           </label>
+          @if (item.type !== 'textarea') {
           <input
             class="border text-sm md:text-base border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400 font-light"
-            type="item.type"
+            [type]="item.type"
             [placeholder]="item.placeholder"
+            [formControlName]="item.formName"
+            [attr.name]="item.formName"
           />
+          } @if (item.type === 'textarea') {
+          <textarea
+            class="border text-sm md:text-base border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400 font-light"
+            [attr.name]="item.formName"
+            [formControlName]="item.formName"
+            [placeholder]="item.placeholder"
+          ></textarea>
+          } } @if (messageFinal) {
+          <p class="text-sm md:text-base font-light ">
+            {{ messageFinal | translate}}
+          </p>
+
           }
           <button
+            type="submit"
             class="border border-[#828282] text-white p-2 rounded-lg mt-2 mb-2 cursor-pointer bg-[var(--theme-color)] font-semibold hover:scale-101 transition-all duration-100"
           >
             {{ 'send' | translate }}
           </button>
-        </div>
+        </form>
         <!-- socials icons -->
         <div class="flex flex-col gap-2 justify-center items-center">
           @for (item of socials; track $index) {
@@ -36,7 +53,7 @@
             <img
               [src]="item.src"
               [alt]="item.alt"
-              class="w-8 h-8 hover:scale-110 transition-transform duration-300 cursor-pointer"
+              class="w-8 h-8 hover:scale-125 transition-transform duration-300 cursor-pointer"
             />
             {{ item.name }}
           </a>
@@ -45,9 +62,9 @@
       </div>
     </app-section-card>
   </div>
-  <!-- right side current focus + experience -->
+  <!-- right side -->
   <div class="col-span-7 space-y-2">
-    <div class="flex gap-2 items-start">
+    <div class="flex flex-col md:flex-row gap-2">
       <!-- skills -->
       <app-section-card title="SKILLS">
         <div class="flex flex-wrap gap-1">
@@ -59,9 +76,7 @@
       <!-- Testimonials  -->
       <app-section-card title="Testimonials">
         <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
-          <p class="italic text-sm md:text-base font-light">
-            "{{ 'job-desc' | translate }}"
-          </p>
+          <p class="italic text-sm md:text-base font-light">"{{ 'job-desc' | translate }}"</p>
         </div>
       </app-section-card>
     </div>
@@ -74,13 +89,17 @@
         <!-- description -->
         <div class="space-y-2">
           <div class="flex flex-col">
-            <h1 class="bebas text-xl font-bold md:text-3xl ">
+            <h1 class="bebas text-2xl font-bold md:text-3xl">
               {{ 'job-title-better' | translate }}
             </h1>
-            <span class="text-[#828282] text-sm mb-1 font-light">{{ 'job-date-better' | translate }}</span>
+            <span class="text-[#828282] text-sm mb-1 font-light">{{
+              'job-date-better' | translate
+            }}</span>
           </div>
           <div>
-            <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm md:text-base font-light">
+            <ul
+              class="list-disc list-inside text-gray-300 space-y-1 text-sm md:text-base font-light"
+            >
               <li>{{ 'job-point-1' | translate }}</li>
               <li>{{ 'job-point-2' | translate }}</li>
               <li>{{ 'job-point-3' | translate }}</li>
@@ -91,10 +110,8 @@
 
       <div class="mt-12">
         <h2 class="bebas text-4xl off-color">EXPERIENCE</h2>
-        <div class="flex items-center gap-1 font-light">
-          <p>{{ 'job-title-better' | translate }}</p>
-          <hr class="w-12 m-2" />
-          <span class="text-[#828282] text-sm md:text-base">{{ 'job-date-better' | translate }}</span>
+        <div class="flex flex-col gap-2 text-sm md:text-base">
+          <app-job-item></app-job-item>
         </div>
       </div>
     </app-section-card>

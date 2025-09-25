@@ -18,5 +18,9 @@
   "job-point-1": "Desarrollo de aplicaciones web con Angular en el sector bancario",
   "job-point-2": "Creación de interfaces modernas y eficientes para usuarios",
   "job-point-3": "Implementación en arquitecturas de microservicios bajo estándares de calidad y seguridad",
+  "job-title-man": "Técnico informático @MAN",
+  "job-date-man": "MARZO 2022 - JUNIO 2022",
+  "message-sent": "Mensaje enviado con éxito",
+  "message-error": "Error enviando mensaje",
   "send": "Enviar"
 }
