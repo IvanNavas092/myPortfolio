@@ -3,7 +3,7 @@
   "contact": "Contacto",
   "skills": "Habilidades",
   "testimonials": "Testimonios",
-  "current-focus": "Enfoque actual",
+  "current-occupation": "Ocupación actual",
   "experience": "Experiencia",
   "projects": "Proyectos",
   "desc-skillping": "SkillPing es una plataforma única con chat incluido, donde las personas se conectan para intercambiar conocimientos. Tú enseñas lo que sabes y aprendes lo que quieres — sin dinero de por medio. Un espacio para crecer juntos, aprender en comunidad y conectar con otros que comparten tu pasión por aprender.",
@@ -22,5 +22,11 @@
   "job-date-man": "MARZO 2022 - JUNIO 2022",
   "message-sent": "Mensaje enviado con éxito",
   "message-error": "Error enviando mensaje",
-  "send": "Enviar"
+  "send": "Enviar",
+  "name": "Nombre",
+  "email": "Email",
+  "message": "Mensaje",
+  "placeholderName": "Pedro",
+  "placeholderEmail": "Pedro@gmail.com",
+  "placeholderMessage": "Hola! Soy desarollador de..."
 }

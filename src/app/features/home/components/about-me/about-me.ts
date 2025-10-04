@@ -46,12 +46,12 @@ export class AboutMe {
 
   skills: string[] = ['Angular', 'React', 'Tailwind', 'Bootstrap', 'java spring', 'django'];
   itemsInput: any[] = [
-    { type: 'text', label: 'Nombre', placeholder: 'Jack', formName: 'name' },
-    { type: 'email', label: 'Email', placeholder: 'jack@gmail.com', formName: 'email' },
+    { type: 'text', label: 'name', placeholder: 'placeholderName', formName: 'name' },
+    { type: 'email', label: 'email', placeholder: 'placeholderEmail', formName: 'email' },
     {
       type: 'textarea',
       label: 'message',
-      placeholder: 'Hello! I am a developer...',
+      placeholder: 'placeholderMessage',
       formName: 'message',
     },
   ];

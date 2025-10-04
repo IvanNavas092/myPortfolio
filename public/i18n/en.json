@@ -3,7 +3,7 @@
   "contact": "Contact",
   "skills": "Skills",
   "testimonials": "Testimonials",
-  "current-focus": "Current Focus",
+  "current-occupation": "Current occupation",
   "experience": "Experience",
   "projects": "Projects",
   "desc-skillping": "SkillPing is a unique platform with chat included, where people connect to exchange knowledge. You teach what you know and learn what you want — without any money involved. A space to grow together, learn in community, and connect with others who share your passion for learning.",
@@ -22,5 +22,11 @@
   "job-date-man": "MARCH 2022 - june 2022",
   "message-sent": "Message sent successfully",
   "message-error": "Error sending message",
-  "send": "send"
+  "send": "send",
+  "name": "Name",
+  "email": "Email",
+  "message": "Message",
+  "placeholderName": "Jack",
+  "placeholderEmail": "Jack@gmail.com",
+  "placeholderMessage": "Hello! I am developer..."
 }

@@ -1,28 +1,28 @@
-<app-new-section nameSection="about Me"></app-new-section>
+<app-new-section nameSection="{{ 'about-me' | translate }}"></app-new-section>
 <section class="relative mt-2 grid grid-cols-1 md:grid-cols-12 gap-2" id="contact">
   <!-- left side about me + contact -->
   <div class="flex flex-col gap-2 col-span-5">
     <!-- about me -->
-    <app-section-card title="ABOUT ME">
+    <app-section-card title="{{ 'about-me' | translate }}">
       <p class="text-sm md:text-base font-light">
         {{ 'about-me-text' | translate }}
       </p>
     </app-section-card>
     <!-- contact -->
-    <app-new-section nameSection="contact"></app-new-section>
+    <app-new-section nameSection="{{ 'contact' | translate }}"></app-new-section>
     <app-section-card>
       <div class="grid grid-cols-2">
         <!-- form -->
         <form (ngSubmit)="submitForm($event)" [formGroup]="formData" class="flex flex-col">
           @for (item of itemsInput; track $index) {
           <label for="name" class="text-base font-semibold">
-            {{ item.label }}
+            {{ item.label | translate}}
           </label>
           @if (item.type !== 'textarea') {
           <input
             class="border text-sm md:text-base border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400 font-light"
             [type]="item.type"
-            [placeholder]="item.placeholder"
+            [placeholder]="item.placeholder | translate"
             [formControlName]="item.formName"
             [attr.name]="item.formName"
           />
@@ -31,7 +31,7 @@
             class="border text-sm md:text-base border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400 font-light"
             [attr.name]="item.formName"
             [formControlName]="item.formName"
-            [placeholder]="item.placeholder"
+            [placeholder]="item.placeholder | translate"
           ></textarea>
           } } @if (messageFinal) {
           <p class="text-sm md:text-base font-light ">
@@ -66,7 +66,7 @@
   <div class="col-span-7 space-y-2">
     <div class="flex flex-col md:flex-row gap-2">
       <!-- skills -->
-      <app-section-card title="SKILLS">
+      <app-section-card title="{{ 'skills' | translate }}">
         <div class="flex flex-wrap gap-1">
           @for (util of skills; track $index) {
           <app-icon-skill [util]="util"></app-icon-skill>
@@ -74,14 +74,14 @@
         </div>
       </app-section-card>
       <!-- Testimonials  -->
-      <app-section-card title="Testimonials">
+      <app-section-card title="{{ 'testimonials' | translate }}">
         <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
           <p class="italic text-sm md:text-base font-light">"{{ 'job-desc' | translate }}"</p>
         </div>
       </app-section-card>
     </div>
     <!-- Current focus -->
-    <app-section-card title="CURRENT FOCUS">
+    <app-section-card title="{{ 'current-occupation' | translate }}">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
         <!-- Caja del proyecto -->
         <app-box-project [project]="project"></app-box-project>
@@ -109,7 +109,7 @@
       </div>
 
       <div class="mt-12">
-        <h2 class="bebas text-4xl off-color">EXPERIENCE</h2>
+        <h2 class="bebas text-4xl off-color">{{ 'experience' | translate }}</h2>
         <div class="flex flex-col gap-2 text-sm md:text-base">
           <app-job-item></app-job-item>
         </div>
