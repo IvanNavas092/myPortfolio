@@ -10,11 +10,18 @@
   "desc-fastsnippets": "FastSnippets es una herramienta que te permite crear y compartir snippets de código de manera rápida y sencilla. Con solo unos pocos clics, puedes crear snippets de código y compartirlos con otros usuarios.",
   "desc-pomodoro": "PomodoroCount es un sitio web que implementa la técnica Pomodoro para ayudarte a mantenerte concentrado mientras estudias o trabajas — ¡con música integrada desde tu propia cuenta de Spotify!",
   "desc-timecapsule": "🚀 Time Capsule — Tu historia, sellada en el tiempo. Es una plataforma web donde los usuarios pueden crear cápsulas del tiempo digitales, programarlas para abrirlas en el futuro y compartirlas con otros… o mantenerlas en secreto hasta el día exacto.",
+  "desc-costadigital": "landing page de Costa Digital, una agencia de marketing líder en Málaga. La web presenta de forma clara y atractiva todos los servicios que ofrece la agencia, como el diseño y desarrollo de páginas web, la creación de chatbots personalizados, la gestión de redes sociales y la producción de contenido digital. El objetivo del proyecto es transmitir la identidad moderna y dinámica de la marca, potenciando su presencia online y ofreciendo a los usuarios una experiencia visual fluida, profesional y centrada en resultados.",
+  "desc-esencia": "Estoy desarrollando una página web tipo portfolio para una fotógrafa profesional. El sitio está diseñado para mostrar una selección de sus obras más destacadas, realizadas en diferentes localizaciones de Los Ángeles. La web combina un diseño limpio y elegante con una navegación fluida que resalta la belleza y el estilo personal de su fotografía. El objetivo es crear un espacio digital que refleje su visión artística y permita a los visitantes explorar su trabajo de forma visual e inspiradora.",
   "about-me-text": "¡Hola! Soy Iván Navas, desarrollador web front-end con especial foco en Angular, pero con mente abierta a cualquier framework o tecnología. Me apasiona crear interfaces limpias, funcionales y bien estructuradas. Estoy con muchísimas ganas de seguir creciendo, aportar valor y continuar mi camino profesional en el sector.",
   "testimonial": "'Como mentor de Iván durante sus prácticas en Better consultants puedo asegurar que es un buen profesional con afán por aprender y mejorar día a día. Demostrando tener un gran potencial a la hora de resolver las distintas tareas que se le fueron asignando.'",
   "job-desc": "Actualmente trabajo como desarrollador Angular en el sector bancario, creando interfaces modernas y eficientes dentro de una arquitectura de microservicios, alineadas con los estándares de calidad y seguridad del entorno financiero.",
   "job-title-better": "Programador Angular @Better Consultants",
   "job-date-better": "MARZO 2025 - PRESENTE",
+  "studie-title-dam": "Grado superior de desarollo de aplicaciones multiplataforma",
+  "studie-date-dam": "SEPTIEMBRE 2022 - JUNIO 2024",
+  "studie-title-smr": "Grado medio de sistemas microinformáticos y redes",
+  "studie-date-smr": "SEPTIEMBRE 2020 - JUNIO 2022",
+  "studies": "Educación",
   "job-point-1": "Desarrollo de aplicaciones web con Angular en el sector bancario",
   "job-point-2": "Creación de interfaces modernas y eficientes para usuarios",
   "job-point-3": "Implementación en arquitecturas de microservicios bajo estándares de calidad y seguridad",
@@ -28,5 +35,7 @@
   "message": "Mensaje",
   "placeholderName": "Pedro",
   "placeholderEmail": "Pedro@gmail.com",
-  "placeholderMessage": "Hola! Soy desarollador de..."
+  "placeholderMessage": "Hola! Soy desarollador de...",
+  "404-p": "¡Si estas viendo esto es porque has navegado a un proyecto que esta en construcción!",
+  "404-text": "PÁGINA NO ENCONTRADA"
 }

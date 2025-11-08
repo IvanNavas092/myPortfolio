@@ -76,6 +76,28 @@ export class AboutMe {
     },
   ];
 
+  listOfExperience: any[] = [
+    {
+      title: 'job-title-better',
+      date: 'job-date-better',
+    },
+    {
+      title: 'job-title-man',
+      date: 'job-date-man',
+    }
+  ]
+
+    listOfStudies: any[] = [
+    {
+      title: 'studie-title-dam',
+      date: 'studie-date-dam',
+    },
+    {
+      title: 'studie-title-smr',
+      date: 'studie-date-smr',
+    }
+  ]
+
   submitForm(e: Event) {
     this.emailService
       .submitForm(e)

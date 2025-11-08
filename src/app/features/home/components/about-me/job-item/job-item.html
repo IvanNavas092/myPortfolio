@@ -1,8 +1,5 @@
-@for (item of listOfExperience; track $index) {
 <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 font-light">
-  <p class="text-sm md:text-base text-gray-200">{{ item.title | translate }}</p>
+  <p class="text-sm md:text-base text-gray-200">{{ title | translate }}</p>
   <hr class="hidden sm:block flex-grow border-t border-gray-300 opacity-70" />
-  <span class="text-gray-500 text-sm md:text-base">{{ item.date | translate }}</span>
+  <span class="text-gray-500 text-sm md:text-base">{{ date | translate }}</span>
 </div>
-
-}

@@ -26,7 +26,7 @@ export class Projects {
       utils: ['Angular', 'Tailwind', 'Firebase'],
     },
     {
-      link: 'https://pomodorocount.netlify.app/',
+      link: 'https://marketingcostadigital.com/',
       title: 'Costa Digital',
       description: 'desc-costadigital',
       image: './projects/costaDigital.jpg',
@@ -40,14 +40,14 @@ export class Projects {
       utils: ['Angular', 'Tailwind'],
     },
     {
-      link: 'https://pomodorocount.netlify.app/',
-      title: 'ELYSE',
-      description: 'desc-elyse',
-      image: './projects/elyse.png',
+      link: 'projects/esencia',
+      title: 'ESENCIA',
+      description: 'desc-esencia',
+      image: './projects/esencia.jpg',
       utils: ['React', 'Tailwind'],
     },
     {
-      link: '',
+      link: 'projects/timeCapsule',
       title: 'TimeCapsule',
       description: 'desc-timecapsule',
       image: './projects/timeCapsule.jpg',
@@ -55,3 +55,9 @@ export class Projects {
     },
   ];
 }
+
+// TODO:
+// 1. ADD PROJECTS
+// 2. METER UN 404 POR SI EL LINK NO EXISTE
+// 3. MODIFICAR FECHAS 2020-2022 Y 2022-2024 
+

@@ -1,6 +1,6 @@
 <div
   #projectBox
-  class="relative group border border-[#828282]/40 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2"
+  class="relative group border border-[#828282]/40 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer transform "
   (click)="toggleOverlay()"
 >
   <!-- img -->
@@ -55,7 +55,7 @@
         >
           {{ project.description | translate }}
         </p>
-        @if (project.title === 'TimeCapsule') {
+        @if (project.title === 'TimeCapsule' || project.title === 'ESENCIA') {
           <span class="text-red-500 text-center">In process!</span>
         }
       </div>

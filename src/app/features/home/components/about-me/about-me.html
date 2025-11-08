@@ -16,7 +16,7 @@
         <form (ngSubmit)="submitForm($event)" [formGroup]="formData" class="flex flex-col">
           @for (item of itemsInput; track $index) {
           <label for="name" class="text-base font-semibold">
-            {{ item.label | translate}}
+            {{ item.label | translate }}
           </label>
           @if (item.type !== 'textarea') {
           <input
@@ -34,8 +34,8 @@
             [placeholder]="item.placeholder | translate"
           ></textarea>
           } } @if (messageFinal) {
-          <p class="text-sm md:text-base font-light ">
-            {{ messageFinal | translate}}
+          <p class="text-sm md:text-base font-light">
+            {{ messageFinal | translate }}
           </p>
 
           }
@@ -108,10 +108,24 @@
         </div>
       </div>
 
-      <div class="mt-12">
-        <h2 class="bebas text-4xl off-color">{{ 'experience' | translate }}</h2>
-        <div class="flex flex-col gap-2 text-sm md:text-base">
-          <app-job-item></app-job-item>
+      <div class="mt-6 flex flex-col gap-2">
+        <div>
+          <!-- Experience -->
+          <h2 class="bebas text-4xl off-color">{{ 'experience' | translate }}</h2>
+          <div class="flex flex-col gap-1 text-sm md:text-base">
+            @for (item of listOfExperience; track $index) {
+            <app-job-item [title]="item.title" [date]="item.date"></app-job-item>
+            }
+          </div>
+        </div>
+        <!-- studies -->
+        <div>
+          <h2 class="bebas text-4xl off-color">{{ 'studies' | translate }}</h2>
+          <div class="flex flex-col gap-1 text-sm md:text-base">
+            @for (item of listOfStudies; track $index) {
+            <app-job-item [title]="item.title" [date]="item.date"></app-job-item>
+            }
+          </div>
         </div>
       </div>
     </app-section-card>
