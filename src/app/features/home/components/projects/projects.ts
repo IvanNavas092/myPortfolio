@@ -40,11 +40,11 @@ export class Projects {
       utils: ['Angular', 'Tailwind'],
     },
     {
-      link: 'projects/esencia',
-      title: 'ESENCIA',
-      description: 'desc-esencia',
-      image: './projects/esencia.jpg',
-      utils: ['React', 'Tailwind'],
+      link: 'projects/herreras',
+      title: 'HERRERAS',
+      description: 'desc-herreras',
+      image: './projects/herreras.jpg',
+      utils: ['Liquid', 'Tailwind'],
     },
     {
       link: 'projects/timeCapsule',

@@ -4,11 +4,10 @@ import { App } from './app/app';
 
 bootstrapApplication(App, appConfig)
   .catch((err) => console.error(err));
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 
 const lenis = new Lenis({
   duration: 1.1,
-  smooth: true,
 });
 
 function raf(time: number) {
@@ -17,5 +16,5 @@ function raf(time: number) {
 }
 requestAnimationFrame(raf);
 
-bootstrapApplication(AppComponent);
+bootstrapApplication(App);
 
