@@ -1,0 +1,75 @@
+<div class="space-y-4">
+    @if (project) {
+    <div class="flex flex-col items-center justify-center h-screen">
+        <app-hover-letters [text]="project.title" [isSubTitle]="true"></app-hover-letters>
+        <a class="text-blue-500 font-light text-lg hover:underline text-center uppercase "
+            [href]="project.href">{{'enter-web' | translate}}</a>
+    </div>
+    @for (section of project.sections; track $index) {
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- TEXTO -->
+        <div [ngClass]="{
+        'md:order-2': section.imagen.posicion === 'izq',
+        'md:order-1': section.imagen.posicion === 'der'
+      }" class="space-y-6">
+
+            <h2 class="text-4xl font-bold text-white">
+                {{ section.titulo | translate }}
+            </h2>
+
+            <p class="off-color text-lg leading-relaxed whitespace-pre-line">
+                {{ section.descripcion | translate }}
+            </p>
+            <div class="flex flex-row gap-2">
+                @for (util of section.utils; track $index) {
+                <app-icon-skill [util]="util"></app-icon-skill>
+                }
+            </div>
+
+            <div class="flex items-center gap-1">
+                <span class="text-sm font-semibold uppercase tracking-wider text-gray-400 mr-2">
+                    Dificultad:
+                </span>
+
+                @for (i of [1, 2, 3, 4, 5]; track i) {
+                <svg [class]="i <= +section.dificultad ? 'text-purple-500' : 'text-gray-300'"
+                    class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                    <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                }
+            </div>
+
+            @if (section.secondImagen) {
+            <img [src]="section.secondImagen.url" [alt]="section.secondImagen.alt"
+                class="relative rounded-lg shadow-xl w-full object-cover ">
+            }
+        </div>
+
+        <!-- IMAGEN -->
+        <div [ngClass]="{
+        'md:order-1': section.imagen.posicion === 'izq',
+        'md:order-2': section.imagen.posicion === 'der'
+      }" class="relative group transition-all duration-500 ease-in-out ">
+
+            <div
+                [class]="'absolute -inset-1 bg-' + section.colorBase + '-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000'">
+            </div>
+            @if (!section.imagen.isVideo) {
+
+                <img [src]="section.imagen.url" [alt]="section.imagen.alt"
+                class="relative rounded-lg shadow-xl w-full object-cover">
+            } @else {
+                <video [src]="section.imagen.url" autoplay muted loop
+                class="relative rounded-lg shadow-xl w-full object-cover"></video>
+            }
+        </div>
+
+    </section>
+
+    }
+    }
+
+</div>

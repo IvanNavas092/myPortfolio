@@ -1,6 +1,14 @@
 <app-new-section nameSection="{{ 'projects' | translate }}"></app-new-section>
-<div class="grid grid-cols-1 md:grid-cols-2 items-stretch gap-2 justify-between mt-2">
-  @for (p of projects; track $index) {
-  <app-box-project [project]="p"></app-box-project>
+
+<div class="grid grid-cols-1 md:grid-cols-2 items-stretch gap-2 mt-2">
+  @for (p of projects; track $index; let last = $last) {
+    <div
+      [class.md:col-span-2]="last && projects.length % 2 !== 0"
+      [class.flex]="last && projects.length % 2 !== 0"
+      [class.justify-center]="last && projects.length % 2 !== 0"
+    >
+      <app-box-project [project]="p"></app-box-project>
+    </div>
+
   }
 </div>

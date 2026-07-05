@@ -10,8 +10,9 @@ export class HoverLetters {
   @Input() text: string = '';
   @Input() isTitle: boolean = false;
   @Input() isSubTitle: boolean = false;
+  @Input() isDeveloper: boolean = false;
 
-  constructor() {}
+  constructor() { }
 
   getLetters() {
     return this.text.split('');
@@ -20,6 +21,7 @@ export class HoverLetters {
   get heroClasses() {
     if (this.isTitle) return 'text-[52vw] md:text-[22vw] lg:text-[25vw] xl:text-[30vw]';
     if (this.isSubTitle) return 'text-[25vw] md:text-[20vw] lg:text-[23vw] xl:text-[20vw]';
+    if (this.isDeveloper) return 'text-[18vw] md:text-[20vw]';
     return '';
   }
 }

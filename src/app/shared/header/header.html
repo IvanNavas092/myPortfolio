@@ -1,5 +1,5 @@
 <header class="flex items-center justify-between w-full z-10">
-  <div class="flex items-center gap-3">
+  <a class="flex items-center gap-3" href="/">
     <img
       src="./imgs/logo.jpg"
       alt="Iván Navas"
@@ -9,7 +9,7 @@
       <span class="text-xl md:text-2xl font-semibold text-[#d1d1d1]">Iván Navas</span>
       <img src="./imgs/verified.png" alt="verified" class="w-6 -ml-2 transition-all duration-200" />
     </div>
-  </div>
+  </a>
   @if (!isMobile) {
 
   <div>
@@ -17,7 +17,7 @@
       <app-button-cv></app-button-cv>
       <app-button-lang></app-button-lang>
       <button
-        class="px-4 py-1 md:py-2 border-1 border-[var(--theme-color)/40] hover:border-[var(--theme-color)] text-gray-400 hover:text-gray-100 rounded-full cursor-pointer transition-all duration-200 text-lg md:text-xl font-semibold"
+        class="px-4 py-1 md:py-2 border-1 border-[var(--theme-color)/40] hover:border-[var(--theme-color)] text-gray-400 hover:text-gray-100 rounded-full cursor-pointer transition-all duration-300 text-lg md:text-xl font-semibold"
         (click)="goToAboutMe()"
       >
         {{ 'contact' | translate }}

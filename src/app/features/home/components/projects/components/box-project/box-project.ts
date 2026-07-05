@@ -5,10 +5,12 @@ import { IconSkill } from "@/shared/icon-skill/icon-skill";
 import { TranslatePipe } from '@ngx-translate/core';
 import { AnimationService } from '@/core/services/animationService';
 import { isPlatformBrowser } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-box-project',
-  imports: [CommonModule, IconSkill, TranslatePipe],
+  imports: [CommonModule, IconSkill, TranslatePipe, RouterLink],
   templateUrl: './box-project.html',
 })
 export class BoxProject implements AfterViewInit, OnDestroy {
@@ -16,7 +18,7 @@ export class BoxProject implements AfterViewInit, OnDestroy {
   isOpenOverlay!: boolean;
   isMobile!: boolean;
 
-  constructor(private animationService: AnimationService, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private animationService: AnimationService, @Inject(PLATFORM_ID) private platformId: Object, private router: Router) {
     if (isPlatformBrowser(this.platformId)) {
       this.isMobile = window.innerWidth < 768;
     }
@@ -54,4 +56,8 @@ export class BoxProject implements AfterViewInit, OnDestroy {
     }
   }
 
+
+  goRoute(route: any) {
+    this.router.navigate(route);
+  }
 }

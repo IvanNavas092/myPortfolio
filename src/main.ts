@@ -16,5 +16,4 @@ function raf(time: number) {
 }
 requestAnimationFrame(raf);
 
-bootstrapApplication(App);
 

@@ -40,6 +40,8 @@ export class AboutMe {
   }
 
   project: Project = {
+    id: 'Bankinter job',
+    title: 'Bankinter job',
     image: './projects/bankinter.jpg',
     utils: ['Angular', 'Bootstrap', 'java spring', 'git', 'jenkins'],
   };
@@ -87,7 +89,7 @@ export class AboutMe {
     }
   ]
 
-    listOfStudies: any[] = [
+  listOfStudies: any[] = [
     {
       title: 'studie-title-dam',
       date: 'studie-date-dam',

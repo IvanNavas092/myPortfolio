@@ -1,0 +1,74 @@
+<!-- CHAT IA -->
+<button class="fixed bottom-4 right-4 cursor-pointer max-w-32 z-50 focus:outline-none group" (click)="toggleChat()">
+    <div
+        class="hover:scale-110 transition-all duration-100 z-30">
+        <img src="imgs/icon_ai.png" alt="iconAI" class="w-full relative z-10 animate-pulse">
+    </div>
+</button>
+
+@if (isOpen) {
+<div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:top-auto md:left-auto md:translate-x-0 md:translate-y-0 md:bottom-30 md:right-4 z-40 animate-fade-in-up">
+    <!-- Contenedor Principal (Efecto Cristal Premium) -->
+    <div
+        class="h-[520px] w-[380px] rounded-2xl border border-zinc-800/80 bg-gradient-to-b from-zinc-950/70 to-zinc-900/80 backdrop-blur-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_0_40px_rgba(168,85,247,0.15)] p-5 flex flex-col gap-4 overflow-hidden relative">
+
+        <!-- Luces de fondo sutiles para dar profundidad al cristal -->
+        <div class="absolute -top-20 -right-20 w-40 h-40 bg-purple-600/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-fuchsia-600/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <!-- CABECERA -->
+        <div class="relative z-10">
+            <div class="flex items-center gap-2 pb-3">
+                <h1 class="font-medium text-sm tracking-wide text-zinc-200">Asistente de Iván Navas</h1>
+            </div>
+            <hr class="border-zinc-800/60">
+        </div>
+
+        <!-- ZONA DE MENSAJES -->
+        <div #chatContainer class="flex flex-1 flex-col gap-3 overflow-y-auto pr-1 relative z-10 scrollbar-thin">
+            @for (item of messages | async; track $index) {
+            <div class="rounded-2xl px-4 py-3 max-w-[85%] text-xs leading-relaxed shadow-sm transition-all break-words"
+                [class.bg-zinc-800/40]="item.role === 'person'" [class.text-zinc-300]="item.role === 'person'"
+                [class.border="item.role === 'person'" ] [class.border-zinc-700/30]="item.role === 'person'"
+                [class.self-end]="item.role === 'person'" [class.bg-gradient-to-br]="item.role === 'ai'"
+                [class.from-purple-600]="item.role === 'ai'" [class.to-purple-900/30]="item.role === 'ai'"
+                [class.text-purple-100]="item.role === 'ai'" [class.border="item.role === 'ai'" ]
+                [class.border-purple-500/30]="item.role === 'ai'" [class.self-start]="item.role === 'ai'">
+                <p>
+                    {{ item.message }}
+                </p>
+            </div>
+            }
+        </div>
+
+        @if (isLoading) {
+        <p class="text-sm font-light text-gray-400 animate-pulse">Estoy preguntando a Iván, dame un momento...</p>
+        }
+
+        <!-- FORMULARIO DE ENTRADA -->
+        <div class="flex items-end w-full relative z-10 pt-2">
+            <form (ngSubmit)="sendMessage(message)"
+                class="flex gap-2 w-full items-center bg-zinc-950/60 border border-zinc-800/80 rounded-xl p-1.5 focus-within:border-purple-500/50 focus-within:shadow-[0_0_15px_rgba(168,85,247,0.1)] transition-all">
+                <input
+                    class="bg-transparent text-zinc-200 rounded-lg pl-3 pr-2 py-2 text-xs flex flex-1 focus:outline-none placeholder-zinc-500"
+                    [(ngModel)]="message" type="text" name="message" placeholder="Pregunta lo que quieras...">
+
+                <button
+                    class="cursor-pointer text-white rounded-lg px-4 py-2 text-xs font-medium bg-gradient-to-r from-purple-600 to-purple-600/50 shadow-md shadow-purple-900/30 transition-all duration-200 active:scale-95"
+                    type="submit">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        
+                            d="M19 12H5m14 0-4 4m4-4-4-4" />
+                    </svg>
+
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+}
