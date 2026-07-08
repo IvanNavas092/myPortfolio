@@ -20,12 +20,12 @@
           </label>
           @if (item.type !== 'textarea') {
           <input
-            class="border text-sm md:text-base border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400 font-light"
+            class="border text-sm md:text-base border-[var(--font-first-color)] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-500 font-light"
             [type]="item.type" [placeholder]="item.placeholder | translate" [formControlName]="item.formName"
             [attr.name]="item.formName" />
           } @if (item.type === 'textarea') {
           <textarea
-            class="border text-sm md:text-base border-[#828282] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-400 font-light"
+            class="border text-sm md:text-base border-[var(--font-first-color)] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-500 font-light"
             [attr.name]="item.formName" [formControlName]="item.formName"
             [placeholder]="item.placeholder | translate"></textarea>
           } } @if (messageFinal) {
@@ -35,7 +35,7 @@
 
           }
           <button type="submit"
-            class="border border-[#828282] text-[#828282] hover:text-white p-2 rounded-full mt-2 mb-2 cursor-pointer bg-transparent hover:border-[var(--theme-color)] font-semibold hover:scale-101 transition-all duration-300">
+            class="border border-[var(--font-first-color)] text-[var(--font-first-color)] hover:text-[var(--font-second-color)] p-2 rounded-full mt-2 mb-2 cursor-pointer bg-transparent hover:border-[var(--theme-color)] font-semibold hover:scale-101 transition-all duration-300">
             {{ 'send' | translate }}
           </button>
         </form>
@@ -94,12 +94,12 @@
             <h1 class="bebas text-2xl font-bold md:text-3xl">
               {{ 'job-title-better' | translate }}
             </h1>
-            <span class="text-[#c7c6c6] text-sm mb-1 font-light">{{
+            <span class="text-[var(--font-second-color)] text-sm mb-1 font-light">{{
               'job-date-better' | translate
               }}</span>
           </div>
           <div>
-            <ul class="list-disc list-inside text-gray-300 space-y-1 text-sm md:text-base font-light">
+            <ul class="list-disc list-inside text-[var(--font-first-color)] space-y-1 text-sm md:text-base font-light">
               <li>{{ 'job-point-1' | translate }}</li>
               <li>{{ 'job-point-2' | translate }}</li>
               <li>{{ 'job-point-3' | translate }}</li>

@@ -11,25 +11,22 @@
   <div class="relative overflow-hidden z-0">
     <img src="{{ project.image }}" alt="{{ project.title }}"
       class="max-w-full max-h-full object-contain transition-all duration-700 group-hover:scale-110 group-hover:brightness-75" />
-    <div
-      class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-    </div>
-  </div>
+    
 
   <!-- Overlay -->
   <div
-    class="z-30 absolute inset-0 bg-gradient-to-br from-black/85 via-[var(--theme-color)]/50 to-[var(--secondary-color)]/20 backdrop-blur-sm transition-all duration-300 flex flex-col justify-center items-center p-4 sm:p-6 lg:p-4 overflow-y-auto"
+    class="z-30 absolute inset-0 bg-gradient-to-br from-[var(--secondary-color)] via-[var(--theme-color)]/10 to-[var(--secondary-color)]/90 backdrop-blur-sm transition-all duration-300 flex flex-col justify-center items-center p-4 sm:p-6 lg:p-4 overflow-y-auto"
     [ngClass]="overlayClasses">
     <div class="w-full max-h-full flex p-4 flex-col items-center space-y-2">
       <!-- title -->
       @if (project.title) {
       <a class="relative flex items-center gap-2 group/title" [routerLink]="['/projects', project.id]">
         <h3
-          class="bebas group-hover/title:underline duration-100 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider text-white text-center mb-2 drop-shadow-2xl">
+          class="bebas group-hover/title:underline duration-100 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider off-color text-center mb-2 drop-shadow-2xl">
           {{ project.title }}
         </h3>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 mb-3 group-hover/title:text-white">
+          class="w-6 mb-3 group-hover/title:text-[var(--font-second-color)]">
           <path stroke-linecap="round" stroke-linejoin="round"
             d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
         </svg>
@@ -40,7 +37,7 @@
       <!-- description -->
       @if (project.description) {
       <div class="flex-grow w-full max-w-2xl px-2">
-        <p class="text-sm sm:text-base text-gray-200 leading-relaxed sm:leading-loose font-light ">
+        <p class="text-sm sm:text-base text-[var(--font-first-color)] leading-relaxed sm:leading-loose font-light ">
           {{ project.description | translate }}
         </p>
         @if (project.title === 'TimeCapsule') {

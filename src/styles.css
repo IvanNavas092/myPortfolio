@@ -1,14 +1,15 @@
 @import 'tailwindcss';
 
 :root {
-  --theme-color: #b66cff;
-  --secondary-color: #7a3bff;
+  --theme-color: #00AB96;
+  --secondary-color: #0B6F63;
+  --font-first-color: #edf1f1;
+  --font-second-color: #00AB96;
 }
 
-
 body {
-  background-color: #111111;
-  color: #ffffff;
+  background-color: #1c1c1c;
+  color: #edf1f1;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -28,11 +29,11 @@ body {
 }
 
 .off-color {
-  color: #d1d1d1;
+  color: #e0e5e4;
 }
 
 .off-color:hover {
-  color: #aaaaaa;
+  color: #bec2c1;
   transition: all 0.2s ease-in-out;
 }
 
