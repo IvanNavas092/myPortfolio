@@ -12,6 +12,7 @@ import { HoverLetters } from '@/shared/hover-letters/hover-letters';
 import { AnimationService } from '@/core/services/animationService';
 import { AiChat } from "../ai-chat/ai-chat";
 import { DatePipe } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.html',
@@ -28,6 +29,7 @@ export class Hero implements AfterViewInit, OnDestroy {
   constructor(
     private animationService: AnimationService,
     @Inject(PLATFORM_ID) private platformId: Object,
+    private translateService: TranslateService
   ) { }
 
   ngAfterViewInit() {
@@ -36,5 +38,14 @@ export class Hero implements AfterViewInit, OnDestroy {
   ngOnDestroy() {
     this.animationService.killAllScrollTriggers();
   }
+
+  getLang(): string {
+    const lang = this.translateService.getCurrentLang();
+    if (lang === 'en') {
+      return 'clamp(2.5rem,13vw,100px)';
+    } else (lang === 'es')
+    return 'clamp(2.1rem,11vw,90px)';
+  }
+
 
 }
