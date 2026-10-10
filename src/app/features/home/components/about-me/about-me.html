@@ -1,128 +1,131 @@
-<app-new-section nameSection="{{ 'about-me' | translate }}"></app-new-section>
-<section class="relative overflow-y-hidden mt-2 mb-16 grid grid-cols-1 md:grid-cols-12 gap-2" id="contact">
-  <!-- left side about me + contact -->
-  <div class="flex flex-col gap-2 col-span-5">
-    <!-- about me -->
-    <app-section-card title="{{ 'bio' | translate }}">
-      <p class="text-sm md:text-base font-light">
-        {{ 'about-me-text' | translate }}
-      </p>
-    </app-section-card>
-    <!-- contact -->
-    <app-new-section nameSection="{{ 'contact' | translate }}"></app-new-section>
-    <app-section-card>
-      <div class="grid grid-cols-2">
-        <!-- form -->
-        <form (ngSubmit)="submitForm($event)" [formGroup]="formData" class="flex flex-col">
-          @for (item of itemsInput; track $index) {
-          <label for="name" class="text-base font-semibold">
-            {{ item.label | translate }}
-          </label>
-          @if (item.type !== 'textarea') {
-          <input
-            class="border text-sm md:text-base border-[var(--font-first-color)] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-500 font-light"
-            [type]="item.type" [placeholder]="item.placeholder | translate" [formControlName]="item.formName"
-            [attr.name]="item.formName" />
-          } @if (item.type === 'textarea') {
-          <textarea
-            class="border text-sm md:text-base border-[var(--font-first-color)] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-500 font-light"
-            [attr.name]="item.formName" [formControlName]="item.formName"
-            [placeholder]="item.placeholder | translate"></textarea>
-          } } @if (messageFinal) {
-          <p class="text-sm md:text-base font-light">
-            {{ messageFinal | translate }}
-          </p>
-
-          }
-          <button type="submit"
-            class="border border-[var(--font-first-color)] text-[var(--font-first-color)] hover:text-[var(--font-second-color)] p-2 rounded-full mt-2 mb-2 cursor-pointer bg-transparent hover:border-[var(--theme-color)] font-semibold hover:scale-101 transition-all duration-300">
-            {{ 'send' | translate }}
-          </button>
-        </form>
-        <!-- socials icons -->
-        <div class="flex flex-col gap-2 justify-center items-center">
-          @for (item of socials; track $index) {
-          <a href="{{ item.href }}" class="flex flex-col items-center gap-1">
-            <img [src]="item.src" [alt]="item.alt"
-              class="w-8 h-8 hover:scale-125 transition-transform duration-300 cursor-pointer" />
-            {{ item.name }}
-          </a>
-          }
-        </div>
-      </div>
-    </app-section-card>
-    <!-- studies -->
-    <app-new-section [small]="true" nameSection="{{ 'studies' | translate }}"></app-new-section>
-    <app-section-card>
-      <div>
+<section class="relative overflow-y-hidden mt-2 mb-16 flex flex-col gap-2" id="contact">
+  <!-- ===== FILA 1: Education (izq) + Experience (der) ===== -->
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-2 items-center">
+    <!-- education -->
+    <div class="flex flex-col gap-2 md:col-span-6">
+      <app-new-section [small]="true" nameSection="{{ 'studies' | translate }}"></app-new-section>
+      <app-section-card>
         <div class="flex flex-col gap-1 text-sm md:text-base">
           @for (item of listOfStudies; track $index) {
           <app-job-item [title]="item.title" [date]="item.date"></app-job-item>
           }
         </div>
-      </div>
-    </app-section-card>
-  </div>
-  <!-- right side -->
-  <div class="col-span-7 space-y-2">
-    <div class="flex flex-col md:flex-row gap-2">
-      <!-- skills -->
-      <app-section-card title="{{ 'skills' | translate }}">
-        <div class="flex flex-wrap gap-1">
-          @for (util of skills; track $index) {
-          <app-icon-skill [util]="util"></app-icon-skill>
-          }
-        </div>
-      </app-section-card>
-      <!-- Testimonials  -->
-      <app-section-card title="{{ 'testimonials' | translate }}">
-        <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
-          <p class="italic text-sm md:text-base font-light">"{{ 'testimonial' | translate }}"</p>
-        </div>
       </app-section-card>
     </div>
-    <!-- Current focus -->
-    <app-new-section nameSection="{{ 'current-occupation' | translate }}"></app-new-section>
-    <app-section-card>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-        <!-- Caja del proyecto -->
-        <app-box-project [project]="project"></app-box-project>
 
-        <!-- description -->
-        <div class="space-y-2">
-          <div class="flex flex-col">
-            <h1 class="bebas text-2xl font-bold md:text-3xl">
-              {{ 'job-title-better' | translate }}
-            </h1>
-            <span class="text-[var(--font-second-color)] text-sm mb-1 font-light">{{
-              'job-date-better' | translate
-              }}</span>
-          </div>
-          <div>
-            <ul class="list-disc list-inside text-[var(--font-first-color)] space-y-1 text-sm md:text-base font-light">
-              <li>{{ 'job-point-1' | translate }}</li>
-              <li>{{ 'job-point-2' | translate }}</li>
-              <li>{{ 'job-point-3' | translate }}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </app-section-card>
-
-    <!-- Experience -->
-    <div class="mt-2">
+    <!-- experience -->
+    <div class="flex flex-col gap-2 md:col-span-6">
       <app-new-section [small]="true" nameSection="{{ 'experience' | translate }}"></app-new-section>
-    </div>
-    <app-section-card>
-      <div class="flex flex-col gap-2">
-        <!-- <h2 class="bebas text-4xl off-color">{{ 'experience' | translate }}</h2> -->
+      <app-section-card>
         <div class="flex flex-col gap-1 text-sm md:text-base">
           @for (item of listOfExperience; track $index) {
           <app-job-item [title]="item.title" [date]="item.date"></app-job-item>
           }
         </div>
-      </div>
-    </app-section-card>
-
+      </app-section-card>
+    </div>
   </div>
+
+  <app-new-section nameSection="{{ 'about-me' | translate }}"></app-new-section>
+
+  <!-- ===== RESTO: tal cual ===== -->
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-2">
+    <!-- left side: bio + contact -->
+    <div class="flex flex-col gap-2 md:col-span-5">
+      <!-- about me -->
+      <app-section-card title="{{ 'bio' | translate }}">
+        <p class="text-sm md:text-base font-light">
+          {{ 'about-me-text' | translate }}
+        </p>
+      </app-section-card>
+
+      <!-- contact -->
+      <app-new-section nameSection="{{ 'contact' | translate }}"></app-new-section>
+      <app-section-card>
+        <div class="grid grid-cols-2">
+          <!-- form -->
+          <form (ngSubmit)="submitForm($event)" [formGroup]="formData" class="flex flex-col">
+            @for (item of itemsInput; track $index) {
+            <label for="name" class="text-base font-semibold">
+              {{ item.label | translate }}
+            </label>
+            @if (item.type !== 'textarea') {
+            <input
+              class="border text-sm md:text-base border-[var(--font-first-color)] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-500 font-light"
+              [type]="item.type" [placeholder]="item.placeholder | translate" [formControlName]="item.formName"
+              [attr.name]="item.formName" />
+            } @if (item.type === 'textarea') {
+            <textarea
+              class="border text-sm md:text-base border-[var(--font-first-color)] p-2 rounded-lg mt-1 mb-2 placeholder:text-gray-500 font-light"
+              [attr.name]="item.formName" [formControlName]="item.formName"
+              [placeholder]="item.placeholder | translate"></textarea>
+            } } @if (messageFinal) {
+            <p class="text-sm md:text-base font-light">
+              {{ messageFinal | translate }}
+            </p>
+            }
+            <button type="submit"
+              class="border border-[var(--font-first-color)] text-[var(--font-first-color)] hover:text-[var(--font-second-color)] p-2 rounded-full mt-2 mb-2 cursor-pointer bg-transparent hover:border-[var(--theme-color)] font-semibold hover:scale-101 transition-all duration-300">
+              {{ 'send' | translate }}
+            </button>
+          </form>
+          <!-- socials icons -->
+          <div class="flex flex-col gap-2 justify-center items-center">
+            @for (item of socials; track $index) {
+            <a href="{{ item.href }}" class="flex flex-col items-center gap-1">
+              <img [src]="item.src" [alt]="item.alt"
+                class="w-8 h-8 hover:scale-125 transition-transform duration-300 cursor-pointer" />
+              {{ item.name }}
+            </a>
+            }
+          </div>
+        </div>
+      </app-section-card>
+    </div>
+
+    <!-- right side: skills + testimonials + current focus -->
+    <div class="md:col-span-7 space-y-2">
+      <div class="flex flex-col md:flex-row gap-2">
+        <!-- testimonials -->
+        <app-section-card title="{{ 'testimonials' | translate }}">
+          <div class="p-4 border-1 border-[#828282]/40 rounded-2xl">
+            <p class="italic text-sm md:text-base font-light">"{{ 'testimonial' | translate }}"</p>
+          </div>
+        </app-section-card>
+        <!-- skills -->
+        <app-section-card title="{{ 'skills' | translate }}">
+          <div class="flex flex-wrap gap-1">
+            @for (util of skills; track $index) {
+            <app-icon-skill [util]="util"></app-icon-skill>
+            }
+          </div>
+        </app-section-card>
+      </div>
+
+      <!-- current focus -->
+      <app-new-section nameSection="{{ 'current-occupation' | translate }}"></app-new-section>
+      <app-section-card>
+        <div class=" gap-6 items-center">
+          <div class="space-y-2">
+            <div class="flex flex-col md:flex-row gap-2 items-start  justify-between">
+              <h1 class="bebas text-2xl font-bold md:text-3xl">
+                {{ 'job-title-better' | translate }}
+              </h1>
+              <div class="flex gap-2 items-center">
+                @for (util of skillsJob; track $index) {
+                <app-icon-skill [util]="util"></app-icon-skill>
+                }
+              </div>
+
+            </div>
+            <span class="text-[var(--font-second-color)] text-sm mb-1 font-light">{{
+              'job-date-better' | translate
+              }}</span>
+            <p class="whitespace-pre-line">{{ 'job-point-1' | translate }}</p>
+          </div>
+        </div>
+      </app-section-card>
+    </div>
+  </div>
+
 </section>

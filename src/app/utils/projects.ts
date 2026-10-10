@@ -7,7 +7,7 @@ export const projectList: Project[] = [
         href: "https://skillping.netlify.app/",
         title: 'SkillPing',
         description: 'desc-skillping',
-        image: './projects/skillPing.jpg',
+        image: './projects/skillPing.webp',
         utils: ['Angular', 'Django', 'Tailwind', 'PostgreSQL'],
         sections: [
             {
@@ -51,7 +51,7 @@ export const projectList: Project[] = [
         href: "https://fastsnippets.es/",
         title: 'FastSnippets',
         description: 'desc-fastsnippets',
-        image: './projects/fastSnippets.jpg',
+        image: './projects/fastSnippets.webp',
         utils: ['Angular', 'Tailwind', 'Firebase'],
         sections: [
             {
@@ -95,7 +95,7 @@ export const projectList: Project[] = [
         href: "https://marketingcostadigital.com/",
         title: 'Costa Digital',
         description: 'desc-costadigital',
-        image: './projects/costaDigital.jpg',
+        image: './projects/costaDigital.webp',
         utils: ['React', 'Tailwind'],
         sections: [
             {
@@ -124,58 +124,58 @@ export const projectList: Project[] = [
             },
         ]
     },
-    {
-        id: 'PomodoroCount',
-        link: 'projects/PomodoroCount',
-        href: "https://pomodorocount.netlify.app/",
-        title: 'Pomodoro Count',
-        description: 'desc-pomodoro',
-        image: './projects/pomodoroCount.jpg',
-        utils: ['Angular', 'Tailwind'],
-        sections: [
-            {
-                id: 1,
-                titulo: "Home",
-                descripcion: "home-desc-pomodoro",
-                dificultad: 1,
-                colorBase: 'off-color',
-                animacion: 'animate-fade-in',
-                imagen:
-                    { url: 'projects/imgsForId/pomodoro/home.png', alt: 'home-pomodoro', posicion: 'izq' },
+    // {
+    //     id: 'PomodoroCount',
+    //     link: 'projects/PomodoroCount',
+    //     href: "https://pomodorocount.netlify.app/",
+    //     title: 'Pomodoro Count',
+    //     description: 'desc-pomodoro',
+    //     image: './projects/pomodoroCount.webp',
+    //     utils: ['Angular', 'Tailwind'],
+    //     sections: [
+    //         {
+    //             id: 1,
+    //             titulo: "Home",
+    //             descripcion: "home-desc-pomodoro",
+    //             dificultad: 1,
+    //             colorBase: 'off-color',
+    //             animacion: 'animate-fade-in',
+    //             imagen:
+    //                 { url: 'projects/imgsForId/pomodoro/home.png', alt: 'home-pomodoro', posicion: 'izq' },
 
-            },
-            {
-                id: 2,
-                titulo: "backgrounds-pomodoro",
-                descripcion: "backgrounds-desc-pomodoro",
-                dificultad: 3,
-                colorBase: 'off-color',
-                animacion: 'animate-fade-in',
-                imagen:
-                    { url: 'projects/imgsForId/pomodoro/backgrounds.png', alt: 'backgrounds-pomodoro', posicion: 'izq' },
-                utils: ['Cloudinary']
-            },
-            {
-                id: 3,
-                titulo: "spotify-pomodoro",
-                descripcion: "spotify-desc-pomodoro",
-                dificultad: 4,
-                colorBase: 'off-color',
-                animacion: 'animate-fade-in',
-                imagen:
-                    { url: 'projects/imgsForId/pomodoro/spotify.png', alt: 'spotify-pomodoro', posicion: 'izq' },
-                utils: ['Spotify API']
-            }
+    //         },
+    //         {
+    //             id: 2,
+    //             titulo: "backgrounds-pomodoro",
+    //             descripcion: "backgrounds-desc-pomodoro",
+    //             dificultad: 3,
+    //             colorBase: 'off-color',
+    //             animacion: 'animate-fade-in',
+    //             imagen:
+    //                 { url: 'projects/imgsForId/pomodoro/backgrounds.png', alt: 'backgrounds-pomodoro', posicion: 'izq' },
+    //             utils: ['Cloudinary']
+    //         },
+    //         {
+    //             id: 3,
+    //             titulo: "spotify-pomodoro",
+    //             descripcion: "spotify-desc-pomodoro",
+    //             dificultad: 4,
+    //             colorBase: 'off-color',
+    //             animacion: 'animate-fade-in',
+    //             imagen:
+    //                 { url: 'projects/imgsForId/pomodoro/spotify.png', alt: 'spotify-pomodoro', posicion: 'izq' },
+    //             utils: ['Spotify API']
+    //         }
 
-        ]
-    },
+    //     ]
+    // },
     {
         id: 'Herreras',
         link: 'projects/Herreras',
         href: "https://www.herreras.com/",
         title: 'HERRERAS',
         description: 'desc-herreras',
-        image: './projects/herreras.jpg',
+        image: './projects/herreras.webp',
         utils: ['Liquid', 'Tailwind'],
         sections: [
             {
@@ -230,7 +230,7 @@ export const projectList: Project[] = [
     //     link: 'projects/TimeCapsule',
     //     title: 'TimeCapsule',
     //     description: 'desc-timecapsule',
-    //     image: './projects/timeCapsule.jpg',
+    //     image: './projects/timeCapsule.webp',
     //     utils: ['React', 'Tailwind', 'Java Spring', 'PostgreSQL'],
     //     sections: [
     //         {

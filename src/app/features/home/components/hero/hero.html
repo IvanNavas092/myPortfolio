@@ -1,21 +1,52 @@
-<section class="flex flex-col min-h-screen overflow-hidden -ml-3 ">
-  <div class="flex flex-col space-y-4 md:space-y-10 lg:space-y-12 xl:-space-y-12 ">
-    <div class="flex flex-col md:flex-row items-start  md:items-center z-20">
-      <app-hover-letters [text]="'Front'" [isTitle]="true"></app-hover-letters>
-      <div class="h-0  md:h-10  bg-[#d1d1d1] hover:bg-[#aaaaaa]  md:m-6 lg:m-8 xl:m-10 2xl:m-12 items-center" #line>
+<div class="min-h-[86svh] md:h-[86vh] grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-4 py-4">
+  <!-- izquierda -->
+  <div class="flex flex-col gap-8 md:gap-6 md:justify-between">
+    <div class="flex flex-col gap-4">
+      <h1
+        class="archivo-black text-(--font-color) text-[clamp(2.5rem,13vw,100px)] md:text-[clamp(2.5rem,7vw,100px)] leading-[0.88] font-extrabold tracking-tighter w-min uppercase">
+        {{ 'software-developer' | translate }}
+      </h1>
+      <div class="flex flex-wrap gap-2 md:gap-4">
+        @for (skill of skills; track $index) {
+        <div
+          class="py-1.5 px-3 md:py-2 md:px-4 flex items-center justify-center border-white/20 text-[var(--font-first-color)] bg-white/10 shadow-lg hover:shadow-2xl hover:text-gray-100 rounded-full backdrop-blur-lg transition-all duration-300 font-bold">
+          <span class="font-light text-xs rounded-full text-gray-300 uppercase">{{skill | translate}}</span>
+        </div> }
       </div>
-      <app-hover-letters [text]="'End'" [isTitle]="true"></app-hover-letters>
     </div>
-    <div class="z-20">
-      <app-hover-letters [text]="'developer' | translate " [isDeveloper]="true"></app-hover-letters>
+
+    <img src="/imgs/me.webp" alt="Ivan Navas"
+      class="object-cover w-full max-w-[800px] h-56 sm:h-72 md:h-auto md:max-h-72">
+
+    <span class="text-(--font-secondary-color) text-sm">
+      {{ 'ubication' | translate }} {{localeDate | date: 'shortTime'}}.
+    </span>
+  </div>
+
+  <!-- derecha: en móvil va primero (badge, rol, nombre) -->
+  <div
+    class="max-md:order-first flex flex-col gap-8 md:gap-0 items-start text-start md:items-end md:text-end md:justify-between">
+    <!-- open to work -->
+    <div
+      class="py-1.5 px-3 flex items-center gap-2 justify-center border-white/20 text-[var(--font-first-color)] bg-white/10 shadow-lg hover:shadow-2xl hover:text-gray-100 rounded-full backdrop-blur-lg transition-all duration-300 font-semibold">
+      <span class="uppercase font-light text-xs">{{ 'working' | translate }}</span>
+      <div class="p-1 bg-red-600 animate-pulse rounded-full"></div>
+    </div>
+
+    <div class="flex flex-col gap-4 md:gap-6">
+      <div class="flex flex-col gap-2 md:gap-4">
+        <span class="text-xs md:text-sm text-(--font-color) uppercase">
+          {{ 'job-profesion' | translate }}
+          <br> {{ 'job-profesion-2' | translate }}
+        </span>
+        <span class="text-xs md:text-sm text-(--font-secondary-color) uppercase">
+          {{ 'ubication' | translate }}
+        </span>
+      </div>
+      <div
+        class="archivo-black text-[clamp(2.5rem,13vw,100px)] md:text-[clamp(2.5rem,7vw,100px)] leading-[0.88] font-extrabold tracking-tighter uppercase">
+        <span>Iván<br>Navas</span>
+      </div>
     </div>
   </div>
-</section>
-
-
-
-
-<!-- CHAT IA -->
-<div class="fixed bottom-4 right-4 cursor-pointer max-w-22 z-99">
-  <app-ai-chat></app-ai-chat>
 </div>

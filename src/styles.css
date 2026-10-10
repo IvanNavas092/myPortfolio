@@ -1,15 +1,16 @@
 @import 'tailwindcss';
 
 :root {
-  --theme-color: #00AB96;
-  --secondary-color: #0B6F63;
-  --font-first-color: #edf1f1;
-  --font-second-color: #00AB96;
+  --theme-color: #c7c1be;       /* headings, enlaces, títulos de sección (~10:1) */
+  --secondary-color: #323232;   /* solo fondos de tarjeta, hover y bordes */
+  --font-first-color: #d8dfef;  /* texto principal (~13:1) */
+  --font-second-color: #9aa3b8; /* subtítulos, fechas, placeholders (~7:1) */
+  --accent-cta: #ffb454;        /* solo botón principal (Send/Contact/CV) */
+  --background-color: #1b1a1a;  /* fondo */
 }
-
 body {
-  background-color: #1c1c1c;
-  color: #edf1f1;
+  background-color: var(--background-color);
+  color: var(--font-first-color);
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -29,11 +30,11 @@ body {
 }
 
 .off-color {
-  color: #e0e5e4;
+  color: var(--font-first-color);
 }
 
 .off-color:hover {
-  color: #bec2c1;
+  color: var(--font-second-color);
   transition: all 0.2s ease-in-out;
 }
 

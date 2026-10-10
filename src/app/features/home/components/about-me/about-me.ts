@@ -43,10 +43,12 @@ export class AboutMe {
     id: 'Bankinter job',
     title: 'Bankinter job',
     image: './projects/bankinter.jpg',
-    utils: ['Angular', 'Bootstrap', 'java spring', 'git', 'jenkins'],
+    utils: ['Angular', 'Bootstrap', 'spring', 'jenkins'],
   };
 
-  skills: string[] = ['Angular', 'React', 'Tailwind', 'Bootstrap', 'java spring', 'django'];
+  skills: string[] = ['Angular', 'React', 'spring', 'django'];
+  skillsJob: string[] = ['Angular', 'jenkins', 'spring'];
+
   itemsInput: any[] = [
     { type: 'text', label: 'name', placeholder: 'placeholderName', formName: 'name' },
     { type: 'email', label: 'email', placeholder: 'placeholderEmail', formName: 'email' },

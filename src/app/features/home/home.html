@@ -1,5 +1,9 @@
-<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-12 ">
   <app-hero></app-hero>
-  <app-projects></app-projects>
   <app-about-me></app-about-me>
+  <app-projects></app-projects>
+  <div class="fixed bottom-0 right-0 z-50 m-4 transition-all  duration-300 ease-out" [class.opacity-0]="!showButtonAi"
+    [class.opacity-100]="showButtonAi">
+    <app-ai-chat></app-ai-chat>
+  </div>
 </div>
