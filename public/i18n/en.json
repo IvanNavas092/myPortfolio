@@ -18,7 +18,7 @@
   "testimonial": "'As Iván's partner in Better Consultants, I can assure he is a professional eager to learn and improve day by day, demonstrating great potential in solving the tasks assigned to him.'",
   "job-desc": "I currently work as an Angular developer in the banking sector, building modern and efficient interfaces within a microservices architecture, aligned with the quality and security standards of the financial environment.",
   "job-title-better": "Angular Developer in Better Consultants",
-  "job-date-better": "JULY 2024 - PRESENT",
+  "job-date-better": "MARCH 2024 - PRESENT",
   "studie-title-dam": "Higher VET in Multiplatform App Development",
   "studie-date-dam": "SEPTEMBER 2022 - JUNE 2024",
   "studie-title-smr": "Intermediate VET in Systems & Networks",
@@ -74,5 +74,6 @@
   "ubication": "Based in Madrid, Spain.",
   "working": "Working",
   "software-developer": "Software Developer",
-  "Microservices": "Microservices"
+  "Microservices": "Microservices",
+  "experience-years": "+2 years of experience"
 }
